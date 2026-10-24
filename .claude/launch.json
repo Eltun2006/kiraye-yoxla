@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "app",
+      "runtimeExecutable": ".venv/Scripts/uvicorn.exe",
+      "runtimeArgs": ["backend.main:app", "--port", "8000", "--reload"],
+      "port": 8000
+    },
+    {
+      "name": "app-sqlite",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "set DATABASE_URL=sqlite:///./scratch_law.db&& .venv\\Scripts\\uvicorn.exe backend.main:app --port 8001"],
+      "port": 8001
+    }
+  ]
+}

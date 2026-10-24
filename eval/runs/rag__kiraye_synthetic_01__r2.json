@@ -1,0 +1,235 @@
+{
+ "doc": "kiraye_synthetic_01.txt",
+ "condition": "rag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:19:30.865295+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 15276,
+  "output_tokens": 11554,
+  "cost_usd": null,
+  "latency_ms": 52557
+ },
+ "candidates": {
+  "1": [
+   "692",
+   "688",
+   "693",
+   "683",
+   "678"
+  ],
+  "2": [
+   "694",
+   "693",
+   "678",
+   "691",
+   "685"
+  ],
+  "3": [
+   "684",
+   "688",
+   "685",
+   "691",
+   "678"
+  ],
+  "4": [
+   "683",
+   "698",
+   "678",
+   "695",
+   "685"
+  ],
+  "5": [
+   "688",
+   "697",
+   "689",
+   "685",
+   "682"
+  ],
+  "6": [
+   "685",
+   "691",
+   "684",
+   "677",
+   "688"
+  ],
+  "7": [
+   "698",
+   "695",
+   "692",
+   "683",
+   "685"
+  ],
+  "8": [
+   "680",
+   "677",
+   "694",
+   "691",
+   "697"
+  ],
+  "9": [
+   "680",
+   "678",
+   "697",
+   "688",
+   "691"
+  ],
+  "10": [
+   "685",
+   "691",
+   "677",
+   "695",
+   "692"
+  ],
+  "11": [
+   "692",
+   "698",
+   "685",
+   "681",
+   "680"
+  ],
+  "12": [
+   "695",
+   "693",
+   "677",
+   "692",
+   "696"
+  ],
+  "13": [
+   "678",
+   "693",
+   "685",
+   "691",
+   "694"
+  ]
+ },
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu müqavilənin əsas predmetidir, kirayəyə verilən mənzili və onun təyinatını müəyyən edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddətini və qüvvəyə minmə tarixini göstərir. Bu, Mülki Məcəllənin 689.1-ci maddəsinə uyğun olaraq standart müddəa hesab olunur.",
+   "suggestion": "",
+   "law_refs": [
+    "689"
+   ]
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Aylıq kirayə haqqının məbləğini və ödəniş tarixini müəyyən edir. Nağd ödəniş əvəzinə bank köçürməsi ilə ödəniş qəbzinin saxlanılması tövsiyə olunur, baxmayaraq ki, Mülki Məcəllənin 684.1-ci maddəsində ödəniş müddəti ayın sonu kimi nəzərdə tutulur.",
+   "suggestion": "",
+   "law_refs": [
+    "684"
+   ]
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Bu maddə kirayəçi üçün çox risklidir, çünki ev sahibinə istənilən vaxt, heç bir xəbərdarlıq etmədən kirayə haqqını artırmaq hüququ verir. Mülki Məcəllənin 678.4-cü maddəsinə əsasən, yaşayış otağının kirayəsi müqaviləsində kirayəçinin ziyanına olan kənaraçıxmalar barəsində razılaşmanın qüvvəsi yoxdur.",
+   "suggestion": "Ev sahibi kirayə haqqını yalnız müqavilə müddətinin sonunda, ən azı 3 (üç) ay əvvəlcədən yazılı bildiriş verməklə və tərəflərin qarşılıqlı razılığı ilə artıra bilər. Artım qanunvericiliklə müəyyən edilmiş qaydalara uyğun olmalıdır.",
+   "law_refs": [
+    "678"
+   ]
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin heç bir halda qaytarılmaması Kirayəçi üçün əhəmiyyətli risk daşıyır və Mülki Məcəllənin 688.3-cü maddəsinə ziddir, çünki bu, kirayəçinin ziyanına olan razılaşmadır. Depozit yalnız kirayəçinin öhdəliklərini pozduğu hallarda (məsələn, zərər vurma, ödənilməmiş borc) istifadə edilməli, qalan hissəsi isə geri qaytarılmalıdır. Depozitin maksimal məbləği Mülki Məcəllənin 688.2-ci maddəsinə görə iki aylıq kirayə haqqından çox olmamalıdır.",
+   "suggestion": "Kirayəçi müqavilə bağlanarkən 1200 (min iki yüz) manat məbləğində depozit ödəyir. Depozit müqaviləyə xitam verildikdən sonra, mənzildə Kirayəçinin təqsiri ucbatından yaranan zərərlər və ödənilməmiş borclar çıxıldıqdan sonra 14 (on dörd) iş günü ərzində Kirayəçiyə qaytarılır. Depozit Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq bankda faizlə depozit hesabında saxlanılır və faizlər Kirayəçiyə məxsusdur.",
+   "law_refs": [
+    "688",
+    "697"
+   ]
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Bu cərimə maddəsi həddən artıq yüksəkdir (aylıq kirayə haqqının hər gecikmə günü üçün 10%-i) və Kirayəçi üçün ağır nəticələrə səbəb ola bilər. Ən əsası, Mülki Məcəllənin 688.4-cü maddəsinə görə, yaşayış otağını kirayəyə verənin kirayəçidən dəbbə pulu ödənilməsi barədə öhdəlik almasına əsas verən razılaşmanın qüvvəsi yoxdur.",
+   "suggestion": "Kirayə haqqının ödənilməsi gecikdirildikdə, Kirayəçi gecikdirilmiş hər gün üçün Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş gecikmə faizi (dəbbə pulu) ödəyir. Müqavilənin Mülki Məcəllənin 685.2-ci maddəsində göstərilən hallarda ləğv edilməsi hüququ qorunur.",
+   "law_refs": [
+    "688",
+    "685"
+   ]
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "access_privacy",
+   "explanation": "Bu maddə Kirayəçinin şəxsi həyatına müdaxilədir və qanunvericiliklə qorunan hüquqlarını kobud şəkildə pozur. Ev sahibi yalnız fövqəladə hallarda və ya Mülki Məcəllənin 678.4-cü maddəsinə uyğun olaraq əvvəlcədən xəbərdarlıq edib Kirayəçi ilə razılaşdıqdan sonra mənzilə daxil ola bilər.",
+   "suggestion": "Ev sahibi mənzilə daxil olmaq üçün Kirayəçiyə ən azı 24 (iyirmi dörd) saat əvvəlcədən yazılı bildiriş verməlidir və Kirayəçinin razılığı əldə edildikdən sonra daxil ola bilər. Yalnız fövqəladə hallarda (məsələn, yanğın, su sızması) əvvəlcədən xəbərdarlıq etmədən mənzilə daxil olmaq mümkündür.",
+   "law_refs": [
+    "678"
+   ]
+  },
+  {
+   "clause_index": 8,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu maddəyə əsasən, mənzildə köhnəlmədən yaranan ciddi nasazlıqların (məsələn, kombi, su boruları) təmiri də Kirayəçinin üzərinə düşür ki, bu da qanunvericiliyə ziddir. Mülki Məcəllənin 682-ci maddəsinə görə, Kirayəçi əşyanın müqavilə üzrə istifadəsi nəticəsində dəyişməsi və ya pisləşməsi üçün məsuliyyət daşımır. Mülki Məcəllənin 680.1-ci maddəsinə əsasən isə zəruri xərcləri Ev sahibi ödəməlidir.",
+   "suggestion": "Kirayəçi mənzildən normal istifadə nəticəsində yaranan kiçik təmir xərclərini (məsələn, lampa dəyişdirilməsi) öz üzərinə götürür. Köhnəlmədən yaranan ciddi nasazlıqlar (məsələn, kombi, su boruları) və ya mənzilin struktur hissələrinin təmiri ilə bağlı xərclər Ev sahibinin hesabına ödənilir. Kirayəçinin təqsiri ucbatından yaranan zərərlərin təmiri Kirayəçinin öhdəliyidir.",
+   "law_refs": [
+    "680",
+    "682"
+   ]
+  },
+  {
+   "clause_index": 9,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin Kirayəçi tərəfindən ödənilməsi adətən standart bir müddəadır. Bu, ədalətli hesab olunur.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu maddə Kirayəçinin hüquqlarını kəskin şəkildə pozur. Ev sahibinin 3 gün şifahi xəbərdarlıqla müqaviləni ləğv etməsi Mülki Məcəllənin 691.2-ci maddəsində göstərilən xəbərdarlıq müddətlərinə (ən azı 2 ay) və 692.1-ci maddəsində tələb olunan \"əsaslı maraq\" şərtinə ziddir. Həmçinin, Kirayəçinin vaxtından əvvəl ləğvetməyə görə 3 aylıq kompensasiya ödəməsi Mülki Məcəllənin 688.4-cü maddəsinə əsasən qüvvəsi olmayan \"dəbbə pulu\" razılaşmasıdır.",
+   "suggestion": "Ev sahibi müqaviləni Mülki Məcəllənin 692-ci maddəsində göstərilən əsaslı maraq olduğu halda və 691.2-ci maddəsində nəzərdə tutulmuş müddətlərə (ən azı 2 ay) uyğun olaraq yazılı bildiriş verməklə ləğv edə bilər. Kirayəçi müqaviləni vaxtından əvvəl ləğv etmək istədikdə, ən azı 2 (iki) ay əvvəlcədən yazılı bildiriş verməlidir və bu halda Ev sahibinin yalnız faktiki itkiləri (məsələn, mənzilin təkrar icarəyə verilməsi dövründə boş qalması səbəbindən yaranan kirayə itkisi) qarşılanır. Dəbbə pulu tələb oluna bilməz.",
+   "law_refs": [
+    "691",
+    "692",
+    "688"
+   ]
+  },
+  {
+   "clause_index": 11,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Bu maddə ev heyvanlarının saxlanmasını qadağan edir. Bu, adətən mənzil kirayəsi müqavilələrində tez-tez rast gəlinən bir müddəadır və qanunvericiliyə zidd deyil.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, standart bir müddəadır və müqavilədə tənzimlənməyən məsələlərin Azərbaycan Respublikasının qanunvericiliyinə, o cümlədən Mülki Məcəlləyə uyğun həll ediləcəyini təmin edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin düzgün qaydada iki nüsxədə tərtib edildiyini və hər tərəfə bir nüsxə verildiyini təsdiq edən standart inzibati müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 2
+}

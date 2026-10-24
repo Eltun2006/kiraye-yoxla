@@ -1,0 +1,98 @@
+{
+ "doc": "kiraye_synthetic_02.docx",
+ "condition": "norag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:24:15.512507+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 999,
+  "output_tokens": 3708,
+  "cost_usd": null,
+  "latency_ms": 15889
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin kim tərəfindən və hansı məqsədlə kirayə verildiyini bildirən standart müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddətini və qüvvəyə minmə tarixini göstərən standart şərt.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Aylıq kirayə haqqının məbləğini və ödəniş qaydasını müəyyən edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "medium",
+   "category": "deposit",
+   "explanation": "Depozitin hansı şərtlərlə geri qaytarılacağı tam aydın deyil. 'Vurulan zərərlər'in nə olduğu və onların necə qiymətləndiriləcəyi dəqiqləşdirilməlidir. Həmçinin, normal aşınma və köhnəlmə depozitdən tutulmamalıdır.",
+   "suggestion": "Kirayəçi 450 manat depozit ödəyir. Depozit müqavilə bitdikdən sonra 10 gün ərzində, Kirayəçinin təqsiri ucbatından mənzilə və ya əmlaka dəymiş, normal aşınma və köhnəlməyə aid olmayan, təsdiq edilmiş zərərlər çıxılmaqla qaytarılır. Zərərlər Ev sahibi tərəfindən sənədləşdirilməli və Kirayəçiyə təqdim edilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "low",
+   "category": "price_change",
+   "explanation": "Kirayə haqqının müqavilə müddətində sabit qalmasını təmin edən müsbət şərt.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "usage_rules",
+   "explanation": "Bu şərt Kirayəçinin şəxsi həyatına və mənzildən sərbəst istifadə hüququna əsassız məhdudiyyət qoyur. Kirayəçi qonaqları qəbul etmək üçün hər dəfə Ev sahibindən icazə almaq məcburiyyətində qalmamalıdır.",
+   "suggestion": "Kirayəçi mənzildə qonaq qəbul edə bilər. Uzunmüddətli qonaqların (məsələn, 14 gündən artıq qalanlar) yerləşdirilməsi Ev sahibi ilə razılaşdırılmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu şərt Kirayəçi üçün ədalətsizdir. Mənzilin normal istifadəsi nəticəsində yaranan aşınma və köhnəlmə üçün divarların rənglənməsi xərci Ev sahibinin məsuliyyətidir. Kirayəçi yalnız qəsdən və ya səhlənkarlıq nəticəsində divarlara vurduğu zərərlərə görə cavabdeh olmalıdır.",
+   "suggestion": "Kirayəçi mənzili təhvil verərkən normal aşınma və köhnəlmə nəticəsində yaranan rəngləmə işlərinin xərcini çəkmir. Kirayəçi yalnız onun təqsiri ucbatından divarlara dəymiş zərərə görə rəngləmə xərclərini çəkir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Ev sahibinin mənzilə daxil olması üçün Kirayəçiyə əvvəlcədən bildiriş verməsi Kirayəçinin şəxsi həyatının toxunulmazlığını təmin edən standart və ədalətli şərt.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "general",
+   "explanation": "Bu şərt Kirayəçinin fundamental hüququnu, yəni mübahisələr zamanı məhkəməyə müraciət etmək hüququnu məhdudlaşdırır və qanunsuz ola bilər. Heç bir tərəf məhkəməyə müraciət etmək hüququndan imtina etmək məcburiyyətində deyil.",
+   "suggestion": "Müqavilə üzrə yaranmış mübahisələr tərəflər arasında danışıqlar yolu ilə həll olunur. Razılıq əldə edilmədikdə, mübahisələr Azərbaycan Respublikasının qanunvericiliyinə uyğun olaraq məhkəmə qaydasında həll edilir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin Kirayəçi tərəfindən istifadəyə görə ödənilməsi standart və ədalətli bir şərt.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 2
+}

@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: kiraye
+      POSTGRES_PASSWORD: kiraye
+      POSTGRES_DB: kiraye
+    ports:
+      # Uncommon host port: native Windows PostgreSQL / WSL often already own 5432-5433.
+      # Bound to 127.0.0.1 only, so the database is not exposed to the local network.
+      - "127.0.0.1:55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kiraye"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

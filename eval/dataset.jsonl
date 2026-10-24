@@ -1,0 +1,61 @@
+{"doc": "kiraye_synthetic_01.txt", "idx": 1, "gold": "low", "acceptable": ["low"], "law": [], "note": "obyekt", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 2, "gold": "low", "acceptable": ["low"], "law": [], "note": "müddət", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 3, "gold": "low", "acceptable": ["low"], "law": [], "note": "ödəniş qaydası (nağd, amma qəbzdən söz yoxdur)", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 4, "gold": "high", "acceptable": ["high"], "law": [], "note": "birtərəfli, xəbərsiz artım", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 5, "gold": "high", "acceptable": ["high"], "law": ["688"], "note": "depozit qaytarılmır; 688.2/688.3", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 6, "gold": "high", "acceptable": ["high"], "law": [], "note": "gündəlik 10% cərimə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 7, "gold": "high", "acceptable": ["high"], "law": [], "note": "xəbərsiz giriş", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 8, "gold": "high", "acceptable": ["high"], "law": ["680", "682"], "note": "bütün təmir, köhnəlmə daxil, kirayəçidə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 9, "gold": "low", "acceptable": ["low"], "law": [], "note": "kommunal sayğacla", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 10, "gold": "high", "acceptable": ["high"], "law": ["691", "692"], "note": "3 gün şifahi ləğv + asimmetrik kompensasiya", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 11, "gold": "low", "acceptable": ["low", "medium"], "law": [], "note": "SƏRHƏD: ev heyvanı qadağası qanunidir, amma məhdudiyyətdir", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 12, "gold": "low", "acceptable": ["low"], "law": [], "note": "standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_01.txt", "idx": 13, "gold": "low", "acceptable": ["low"], "law": [], "note": "standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 1, "gold": "low", "acceptable": ["low"], "law": [], "note": "obyekt", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 2, "gold": "low", "acceptable": ["low"], "law": [], "note": "müddət", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 3, "gold": "low", "acceptable": ["low"], "law": [], "note": "bank köçürməsi", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 4, "gold": "low", "acceptable": ["low", "medium"], "law": ["688"], "note": "SƏRHƏD: ədalətli depozit; bankda saxlanma (688.2) qeyd olunmayıb, 'zərərlər' qeyri-müəyyən → medium da qəbul", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 5, "gold": "low", "acceptable": ["low"], "law": [], "note": "kirayəçinin xeyrinə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 6, "gold": "high", "acceptable": ["medium", "high"], "law": [], "note": "hər qonaq üçün yazılı icazə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 7, "gold": "high", "acceptable": ["medium", "high"], "law": ["682"], "note": "vəziyyətdən asılı olmayaraq rəngləmə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 8, "gold": "low", "acceptable": ["low"], "law": [], "note": "24 saat xəbərdarlıq — ədalətli", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 9, "gold": "high", "acceptable": ["high"], "law": [], "note": "məhkəməyə müraciətdən imtina", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_02.docx", "idx": 10, "gold": "low", "acceptable": ["low"], "law": [], "note": "kommunal sayğacla", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 1, "gold": "low", "acceptable": ["low"], "law": [], "note": "obyekt, mebelli", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 2, "gold": "high", "acceptable": ["medium", "high"], "law": ["693"], "note": "avtomatik uzadılma + birtərəfli 'bazar qiyməti'", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 3, "gold": "high", "acceptable": ["medium", "high"], "law": [], "note": "USD məzənnəsinə bağlı qiymət", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 4, "gold": "high", "acceptable": ["high"], "law": ["688"], "note": "depozit 2 aylıq; qaytarılma ev sahibinin qərarı ilə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 5, "gold": "medium", "acceptable": ["medium", "high"], "law": [], "note": "SƏRHƏD: 5 gün güzəşt, sonra gündə 1% (ayda ~30%)", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 6, "gold": "low", "acceptable": ["low"], "law": ["683"], "note": "subkirayə üçün razılıq — standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 7, "gold": "low", "acceptable": ["low"], "law": [], "note": "kiçik/əsaslı təmir bölgüsü — standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 8, "gold": "low", "acceptable": ["low"], "law": [], "note": "ayda 1 dəfə, 24 saat xəbərdarlıq", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 9, "gold": "high", "acceptable": ["high"], "law": ["699"], "note": "satışda avtomatik xitam, 7 gün", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 10, "gold": "low", "acceptable": ["low"], "law": [], "note": "kirayəçinin ləğv hüququ", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 11, "gold": "medium", "acceptable": ["medium", "high"], "law": [], "note": "PROMPT INJECTION bəndi — qaydaya görə medium", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 12, "gold": "low", "acceptable": ["low"], "law": [], "note": "standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_03.pdf", "idx": 13, "gold": "low", "acceptable": ["low"], "law": [], "note": "standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 1, "gold": "low", "acceptable": ["low"], "law": [], "note": "obyekt", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 2, "gold": "low", "acceptable": ["low"], "law": [], "note": "razılıqla uzadılma", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 3, "gold": "low", "acceptable": ["low"], "law": [], "note": "bank köçürməsi + qəbz", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 4, "gold": "low", "acceptable": ["low"], "law": [], "note": "qiymət sabit", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 5, "gold": "low", "acceptable": ["low"], "law": ["688"], "note": "1 aylıq depozit, bankda, 7 gün, köhnəlmə istisna", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 6, "gold": "low", "acceptable": ["low"], "law": [], "note": "gecikmədə yalnız xəbərdarlıq", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 7, "gold": "low", "acceptable": ["low"], "law": [], "note": "ədalətli təmir bölgüsü", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 8, "gold": "low", "acceptable": ["low"], "law": [], "note": "razılıq + 24 saat, qəza istisnası", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 9, "gold": "low", "acceptable": ["low"], "law": ["683"], "note": "subkirayə üçün razılıq", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 10, "gold": "low", "acceptable": ["low"], "law": [], "note": "qarşılıqlı 3 ay bildiriş", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 11, "gold": "low", "acceptable": ["low"], "law": [], "note": "ev heyvanı — əsassız rədd edilə bilməz", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 12, "gold": "low", "acceptable": ["low", "medium"], "law": [], "note": "SƏRHƏD: siqaret qadağası", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_04.txt", "idx": 13, "gold": "low", "acceptable": ["low"], "law": [], "note": "məhkəmə hüququ saxlanılır", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 1, "gold": "low", "acceptable": ["low"], "law": [], "note": "obyekt", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 2, "gold": "medium", "acceptable": ["medium", "high"], "law": ["693"], "note": "avtomatik uzadılma ilə gizli 15% artım", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 3, "gold": "medium", "acceptable": ["medium", "high"], "law": [], "note": "yalnız nağd, qəbz yoxdur — sübut riski", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 4, "gold": "high", "acceptable": ["medium", "high"], "law": ["688"], "note": "3 aylıq təminat > 688.2 həddi (2 ay); 688.3 ilə etibarsız", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 5, "gold": "medium", "acceptable": ["medium", "high"], "law": [], "note": "sabit ödəniş, birtərəfli dəyişə bilər", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 6, "gold": "medium", "acceptable": ["medium", "high"], "law": ["698"], "note": "əşyaları saxlamaq hüququ (girov, 698)", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 7, "gold": "medium", "acceptable": ["low", "medium"], "law": [], "note": "SƏRHƏD: qeydiyyat qadağası", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 8, "gold": "low", "acceptable": ["low", "medium"], "law": [], "note": "SƏRHƏD: notarial xərclər kirayəçidə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 9, "gold": "medium", "acceptable": ["medium", "high"], "law": ["691", "692"], "note": "şəxsi ehtiyac əsaslı ola bilər (692), amma 1 ay < 3 ay (691)", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 10, "gold": "low", "acceptable": ["low"], "law": [], "note": "dəyişiklik üçün razılıq — standart", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 11, "gold": "high", "acceptable": ["medium", "high"], "law": ["682"], "note": "normal köhnəlmə kirayəçidə", "label_source": "assistant-draft"}
+{"doc": "kiraye_synthetic_05.txt", "idx": 12, "gold": "low", "acceptable": ["low"], "law": [], "note": "standart", "label_source": "assistant-draft"}

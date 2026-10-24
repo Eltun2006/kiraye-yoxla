@@ -1,0 +1,89 @@
+{
+  "n_queries": 20,
+  "results": [
+    {
+      "method": "BM25 / bütöv maddə",
+      "hit@1": 0.6,
+      "hit@3": 0.7,
+      "hit@5": 0.75,
+      "MRR": 0.673
+    },
+    {
+      "method": "BM25+stem5 / bütöv maddə",
+      "hit@1": 0.55,
+      "hit@3": 0.8,
+      "hit@5": 0.85,
+      "MRR": 0.691
+    },
+    {
+      "method": "e5-small / bütöv maddə",
+      "hit@1": 0.3,
+      "hit@3": 0.5,
+      "hit@5": 0.6,
+      "MRR": 0.469
+    },
+    {
+      "method": "hybrid e5-small+BM25s / bütöv maddə",
+      "hit@1": 0.5,
+      "hit@3": 0.7,
+      "hit@5": 0.85,
+      "MRR": 0.638
+    },
+    {
+      "method": "e5-base / bütöv maddə",
+      "hit@1": 0.25,
+      "hit@3": 0.55,
+      "hit@5": 0.7,
+      "MRR": 0.465
+    },
+    {
+      "method": "hybrid e5-base+BM25s / bütöv maddə",
+      "hit@1": 0.4,
+      "hit@3": 0.85,
+      "hit@5": 0.9,
+      "MRR": 0.622
+    },
+    {
+      "method": "BM25 / bəndlər",
+      "hit@1": 0.4,
+      "hit@3": 0.75,
+      "hit@5": 0.8,
+      "MRR": 0.611
+    },
+    {
+      "method": "BM25+stem5 / bəndlər",
+      "hit@1": 0.45,
+      "hit@3": 0.8,
+      "hit@5": 0.85,
+      "MRR": 0.632
+    },
+    {
+      "method": "e5-small / bəndlər",
+      "hit@1": 0.35,
+      "hit@3": 0.4,
+      "hit@5": 0.5,
+      "MRR": 0.452
+    },
+    {
+      "method": "hybrid e5-small+BM25s / bəndlər",
+      "hit@1": 0.35,
+      "hit@3": 0.7,
+      "hit@5": 0.8,
+      "MRR": 0.529
+    },
+    {
+      "method": "e5-base / bəndlər",
+      "hit@1": 0.3,
+      "hit@3": 0.7,
+      "hit@5": 0.8,
+      "MRR": 0.508
+    },
+    {
+      "method": "hybrid e5-base+BM25s / bəndlər",
+      "hit@1": 0.45,
+      "hit@3": 0.8,
+      "hit@5": 0.85,
+      "MRR": 0.627
+    }
+  ]
+}

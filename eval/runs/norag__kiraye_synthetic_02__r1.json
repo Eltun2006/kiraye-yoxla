@@ -1,0 +1,98 @@
+{
+ "doc": "kiraye_synthetic_02.docx",
+ "condition": "norag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:19:56.670003+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 999,
+  "output_tokens": 3846,
+  "cost_usd": null,
+  "latency_ms": 17502
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin ünvanı və təyinatı qeyd olunur. Bu, müqavilənin əsas şərtlərindən biridir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddəti və qüvvəyə minmə tarixi göstərilir. Bu, standart müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Kirayə haqqının məbləği, ödəniş tarixi və üsulu qeyd olunur. Bu, normal bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "medium",
+   "category": "deposit",
+   "explanation": "Depozit məbləği normaldır, lakin hansı zərərlərin depozitdən çıxılacağı dəqiq göstərilmir. Bu, Ev sahibinin subyektiv qərarına əsaslana bilər.",
+   "suggestion": "Kirayəçi 450 manat depozit ödəyir. Depozit müqavilə bitdikdən sonra 10 gün ərzində, mənzilə Kirayəçinin təqsiri ucbatından dəyən və normal aşınma xaricində olan zərərlərin qiymətləndirilmiş məbləği çıxılmaqla qaytarılır. Zərərlərin siyahısı və qiymətləndirilməsi Ev sahibi tərəfindən yazılı şəkildə Kirayəçiyə təqdim edilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "low",
+   "category": "price_change",
+   "explanation": "Bu şərt kirayəçi üçün əlverişlidir, çünki müqavilə müddəti ərzində kirayə haqqının dəyişməyəcəyini təmin edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "usage_rules",
+   "explanation": "Bu şərt Kirayəçinin şəxsi həyatına və mənzildən sərbəst istifadə hüququna ciddi məhdudiyyət qoyur. Mənzildə qonaq qəbul etmək üçün hər dəfə Ev sahibindən yazılı icazə almaq əsassız tələbdir.",
+   "suggestion": "Kirayəçi mənzildə qonaq qəbul edə bilər. Qonaqlar mənzildə qalıcı olaraq yaşamamalı və mülkə zərər verməməlidirlər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu şərt kirayəçi üçün ədalətsizdir. Mənzilin normal aşınması nəticəsində yaranan rəngləmə xərcləri Kirayəçinin üzərinə düşməməlidir. Mənzilin tərk edilməsi zamanı bütün divarları vəziyyətindən asılı olmayaraq rəngləmək tələbi həddindən artıqdır.",
+   "suggestion": "Kirayəçi mənzili normal vəziyyətdə təhvil verməlidir. Normal aşınma və köhnəlmə nəticəsində yaranan zədələr Kirayəçinin məsuliyyətində deyil. Mənzilin divarları yalnız Kirayəçinin təqsiri ucbatından ciddi zədələndiyi təqdirdə Kirayəçi tərəfindən təmir edilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Bu şərt Ev sahibinin mənzilə daxil olmaq hüququnu tənzimləyir və Kirayəçinin şəxsi həyatının toxunulmazlığını qoruyur. Bu, standart və ədalətli bir müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "general",
+   "explanation": "Bu şərt Kirayəçinin qanuni hüquqlarını pozur. Heç bir müqavilə tərəfi özünün məhkəməyə müraciət etmək hüququndan imtina edə bilməz. Bu müddəa qeyri-qanunidir və sizin hüquqlarınızı məhdudlaşdırır.",
+   "suggestion": "Hər hansı mübahisə yarandıqda tərəflər danışıqlar yolu ilə həll etməyə çalışırlar. Razılığa gəlinmədiyi təqdirdə, tərəflərin Azərbaycan Respublikasının qanunvericiliyinə uyğun olaraq məhkəməyə müraciət etmək hüququ var.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin sayğac göstəricilərinə əsasən ödənilməsi normal bir təcrübədir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}

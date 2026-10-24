@@ -1,0 +1,122 @@
+{
+ "doc": "kiraye_synthetic_01.txt",
+ "condition": "norag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:16:44.732024+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1208,
+  "output_tokens": 5162,
+  "cost_usd": null,
+  "latency_ms": 27047
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin ünvanı və təyinatı qeyd olunur. Bu, müqavilənin əsas şərtlərindən biridir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddətini və qüvvəyə minmə tarixini müəyyən edir. Bu, standart müqavilə şərtidir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Aylıq kirayə haqqının məbləğini və ödəniş tarixini göstərir. Bu, aydın və standart şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Bu şərt çox risklidir, çünki Ev sahibinə istədiyi vaxt və Kirayəçiyə xəbərdarlıq etmədən kirayə haqqını artırmağa icazə verir. Bu, Kirayəçinin büdcəsini qeyri-sabit edə bilər.",
+   "suggestion": "Ev sahibi kirayə haqqını artırmaq istədikdə, bu barədə Kirayəçiyə ən azı 2 (iki) ay əvvəl yazılı xəbərdarlıq etməlidir. Kirayə haqqının artırılması müqavilə müddətində ildə bir dəfədən çox olmamalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Bu şərt Kirayəçi üçün çox risklidir, çünki ödənilən depozitin heç bir halda geri qaytarılmayacağını bildirir. Depozit adətən mənzilə dəyən zərərləri ödəmək üçün nəzərdə tutulur və müqavilə bitdikdə qaytarılmalıdır.",
+   "suggestion": "Kirayəçi müqavilə bağlanarkən 1200 manat məbləğində depozit ödəyir. Depozit mənzildə Kirayəçinin səhvi ucbatından yaranan zərərlərin qarşılanması üçündür və müqavilə müddəti bitdikdən və mənzil təhvil verildikdən sonra, mənzildə zərər olmadıqda tam şəkildə Kirayəçiyə geri qaytarılır. Normal köhnəlmə depozitdən tutulmur.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Bu cərimə şərti həddindən artıq yüksəkdir. Hər gecikmə günü üçün aylıq kirayə haqqının 10%-i çox böyük məbləğ yarada bilər və Kirayəçi üçün ciddi maliyyə yükü deməkdir.",
+   "suggestion": "Ödəniş gecikdikdə Kirayəçi hər gecikmə günü üçün gecikdirilmiş məbləğin 0.5%-i miqdarında cərimə ödəyir, lakin ümumi cərimə məbləği aylıq kirayə haqqının ən çox 10%-ni təşkil edə bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "access_privacy",
+   "explanation": "Bu şərt Kirayəçinin şəxsi həyat toxunulmazlığını pozur. Ev sahibi mənzilə yalnız xüsusi hallarda (məsələn, təcili təmir üçün) və ya Kirayəçiyə əvvəlcədən xəbərdarlıq edərək daxil olmalıdır.",
+   "suggestion": "Ev sahibi mənzilə daxil olmaq istədikdə, bu barədə Kirayəçiyə ən azı 24 (iyirmi dörd) saat əvvəl xəbərdarlıq etməlidir. Təcili hallar (su sızması, yanğın təhlükəsi və s.) istisnadır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu şərt ədalətsizdir. Normal köhnəlmədən və ya Ev sahibinin əmlakının təbiətindən irəli gələn ciddi nasazlıqların təmiri Ev sahibinin öhdəliyi olmalıdır. Kirayəçi yalnız öz səhvi ucbatından yaranan zərərləri ödəməlidir.",
+   "suggestion": "Kirayəçi mənzildə özünün və ya qonaqlarının səhvi nəticəsində yaranan kiçik təmir xərclərini (məsələn, lampa dəyişdirilməsi) ödəyir. Mənzildə normal köhnəlmədən yaranan və ya Ev sahibinin əmlakının təbiətinə görə yaranan ciddi nasazlıqların (kombi, su boruları, konstruktiv hissələr) təmir xərcləri Ev sahibi tərəfindən ödənilir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin Kirayəçi tərəfindən ödənilməsi standart bir şərtdir. Bu, Kirayəçinin istifadə etdiyi enerjinin haqqını ödəməsini təmin edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu şərt çox ədalətsizdir. Ev sahibinin 3 gün şifahi xəbərdarlıqla müqaviləni ləğv etməsi Kirayəçini qısa müddətdə evsiz qoya bilər. Kirayəçinin isə müqaviləni vaxtından əvvəl ləğv etməsi üçün 3 aylıq kirayə haqqı ödəməli olması Ev sahibinə nəzərəçarpacaq dərəcədə daha çox imtiyaz verir.",
+   "suggestion": "Müqavilənin müddətindən əvvəl ləğvi zamanı hər iki tərəf digər tərəfi ən azı 1 (bir) ay əvvəl yazılı şəkildə xəbərdar etməlidir. Bu halda heç bir tərəf kompensasiya ödəməyəcəkdir. Əgər Kirayəçi bu müddətdən az xəbərdarlıqla müqaviləni ləğv etsə, o, əvvəlcədən xəbərdarlıq edilməyən hər çatışmayan ay üçün aylıq kirayə haqqı məbləğində kompensasiya ödəyir, lakin 1 (bir) aylıq kirayə haqqından çox olmamalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Ev heyvanı saxlanmasına qoyulan qadağa Ev sahibinin əmlakını qorumaq üçün verilən standart bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilədə qeyd olunmayan məsələlərin Azərbaycan qanunvericiliyi ilə tənzimlənməsini bildirir. Bu, standart hüquqi şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin neçə nüsxədə tərtib olunduğunu və tərəflərə verildiyini qeyd edir. Bu, standart administrativ şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 3
+}

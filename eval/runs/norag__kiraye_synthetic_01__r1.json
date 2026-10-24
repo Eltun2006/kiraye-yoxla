@@ -1,0 +1,122 @@
+{
+ "doc": "kiraye_synthetic_01.txt",
+ "condition": "norag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:14:07.571234+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1208,
+  "output_tokens": 5393,
+  "cost_usd": null,
+  "latency_ms": 28327
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin kim tərəfindən və hansı məqsədlə istifadəyə verildiyini göstərən standart müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddətini və qüvvəyə minmə tarixini müəyyən edən adi bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Aylıq kirayə haqqının məbləğini və ödəniş qaydasını müəyyən edən standart müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Bu bənd Ev sahibinə kirayə haqqını istənilən vaxt, sizə xəbər vermədən artırmaq hüququ verir ki, bu da sizin üçün maliyyə qeyri-müəyyənliyi yaradır və qəbuledilməzdir.",
+   "suggestion": "Kirayə haqqı müqavilə müddətində dəyişməz qalır. Müqavilənin müddəti bitdikdə və ya tərəflərin qarşılıqlı razılığı ilə, qabaqcadan ən azı 30 gün yazılı xəbərdarlıq edilməklə dəyişdirilə bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin heç bir halda geri qaytarılmaması sizin üçün yüksək risk daşıyır. Depozit mənzilə dəyən zərərlər üçün nəzərdə tutulur və müqavilə bitdikdən sonra, zərər yoxdursa, qaytarılmalıdır.",
+   "suggestion": "Kirayəçi müqavilə bağlanarkən 1200 manat məbləğində depozit ödəyir. Müqaviləyə xitam verildikdən və mənzildə zərər olmadığı yoxlanıldıqdan sonra depozit tam həcmdə Kirayəçiyə qaytarılır. Mənzilə dəyən hər hansı zərər (normal aşınma və köhnəlmə istisna olmaqla) depozitdən çıxıla bilər, qalan məbləğ isə Kirayəçiyə qaytarılır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Hər gecikmə günü üçün aylıq kirayə haqqının 10%-i miqdarında cərimə həddindən artıq yüksəkdir və sizin üçün çox böyük maliyyə yükü yarada bilər. Bu, qəbuledilməz dərəcədə sərt bir bənddir.",
+   "suggestion": "Kirayə haqqının ödənişi gecikdikdə, Kirayəçi gecikdirilmiş hər gün üçün gecikdirilmiş məbləğin 0.1%-i miqdarında cərimə ödəyir, lakin ümumi cərimə məbləği aylıq kirayə haqqının ən çox 10%-ni keçə bilməz.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "access_privacy",
+   "explanation": "Ev sahibinin sizə xəbər vermədən istənilən vaxt mənzilə daxil olması sizin şəxsi həyatınızın toxunulmazlığı hüququnu pozur və qəbuledilməzdir.",
+   "suggestion": "Ev sahibi mənzilə yalnız Kirayəçinin əvvəlcədən razılığı ilə və ya təcili hallar (su sızması, yanğın təhlükəsi kimi) istisna olmaqla, ən azı 24 saat əvvəl yazılı şəkildə xəbərdarlıq etməklə daxil ola bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu bəndə əsasən, normal köhnəlmədən yaranan və ya mənzilin böyük sistemlərindəki nasazlıqların təmiri də sizin üzərinizə düşür ki, bu da ədalətli deyil. Kirayəçi yalnız öz səhvindən yaranan zərərlərə görə məsuliyyət daşımalıdır.",
+   "suggestion": "Kirayəçi mənzildə Kirayəçinin təqsiri ucbatından yaranan zərərlərin təmir xərclərini ödəyir. Mənzilin normal köhnəlməsi nəticəsində yaranan nasazlıqlar, eləcə də əsas struktur elementlərinin və ya sistemlərin (məsələn, kombi, su boruları, elektrik sistemi) təmiri Ev sahibinin hesabına həyata keçirilir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin sayğac göstəricilərinə uyğun olaraq Kirayəçi tərəfindən ödənilməsi normal təcrübədir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu bənd birtərəfli qaydada Ev sahibinə çox böyük üstünlük verir. Ev sahibinin 3 gün şifahi xəbərdarlıqla müqaviləni ləğv edə bilməsi sizin üçün böyük qeyri-sabitlik yaradır, siz isə müqaviləni ləğv etmək istədikdə ağır cərimə ödəyirsiniz.",
+   "suggestion": "Ev sahibi müqaviləni yalnız Azərbaycan Respublikasının qanunvericiliyində nəzərdə tutulmuş əsaslarla və ən azı 30 (otuz) gün əvvəl yazılı şəkildə xəbərdarlıq etməklə birtərəfli qaydada ləğv edə bilər. Kirayəçi müqaviləni vaxtından əvvəl ləğv etmək istədikdə, ən azı 30 (otuz) gün əvvəl Ev sahibinə yazılı xəbərdarlıq etməli və Ev sahibinə dəymiş sübut olunmuş zərəri ödəməlidir, lakin bu məbləğ bir aylıq kirayə haqqı məbləğindən çox ola bilməz. Hər iki tərəf üçün xəbərdarlıq müddəti və şərtləri bərabər olmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Ev heyvanı saxlamaqla bağlı qadağa kirayə müqavilələrində tez-tez rast gəlinən bir müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilədə nəzərdə tutulmayan məsələlərin Azərbaycan qanunvericiliyi ilə həll ediləcəyini bildirən standart bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin neçə nüsxədə tərtib edildiyini və tərəflərə verildiyini göstərən adi bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}

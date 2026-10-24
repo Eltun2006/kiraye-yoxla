@@ -1,0 +1,20 @@
+{"query": "Depozit heç bir halda Kirayəçiyə qaytarılmır.", "expected": ["688"]}
+{"query": "Ev sahibi müqaviləni 3 gün əvvəl şifahi xəbərdarlıq etməklə birtərəfli qaydada ləğv edə bilər.", "expected": ["690", "691", "692"]}
+{"query": "Ev sahibi istənilən vaxt Kirayəçiyə xəbər vermədən mənzilə daxil ola bilər.", "expected": ["678"]}
+{"query": "Mənzildə yaranan bütün təmir xərcləri, o cümlədən köhnəlmədən yaranan nasazlıqlar Kirayəçinin hesabına aradan qaldırılır.", "expected": ["676", "680"]}
+{"query": "Kirayəçi mənzili Ev sahibinin razılığı olmadan başqasına subkirayəyə verə bilməz.", "expected": ["683"]}
+{"query": "Aylıq kirayə haqqı hər ayın 5-dək ödənilir.", "expected": ["684"]}
+{"query": "Ev sahibi mənzili satdıqda müqavilə avtomatik xitam olunur və Kirayəçi mənzili 7 gün ərzində boşaltmalıdır.", "expected": ["699", "692"]}
+{"query": "Müqavilə bitdikdən sonra Kirayəçi mənzili qaytarmazsa, gecikdiyi hər gün üçün ödəniş edir.", "expected": ["697"]}
+{"query": "Ev sahibi mənzili yaşayış üçün yararlı vəziyyətdə təhvil verməlidir.", "expected": ["676"]}
+{"query": "Kirayəçi mənzildə qonaq qəbul etməzdən əvvəl hər dəfə Ev sahibindən yazılı icazə almalıdır.", "expected": ["683"]}
+{"query": "Kirayəçi müqaviləni 1 ay əvvəl yazılı bildiriş verməklə vaxtından əvvəl ləğv edə bilər.", "expected": ["690", "691"]}
+{"query": "Müqavilənin müddəti 12 aydır və avtomatik uzadılır.", "expected": ["689", "693"]}
+{"query": "Kirayəçi iki ay ödəniş etmədikdə Ev sahibi müqaviləni xəbərdarlıqsız ləğv edə bilər.", "expected": ["685", "686"]}
+{"query": "Kirayəçi vəfat etdikdə müqavilə onun ailə üzvləri ilə davam etdirilə bilərmi?", "expected": ["695"]}
+{"query": "Mənzildə qüsur aşkar olunarsa Kirayəçi kirayə haqqını azalda bilər.", "expected": ["677"]}
+{"query": "Kirayəçi üç aylıq kirayə haqqı məbləğində təminat (depozit) ödəyir.", "expected": ["688"]}
+{"query": "Kirayəçi ödəniş etmədikdə Ev sahibi mənzildəki əşyalarını saxlaya bilər.", "expected": ["698"]}
+{"query": "Hər hansı mübahisə yarandıqda Kirayəçi Ev sahibinə qarşı məhkəməyə müraciət etməmək öhdəliyi götürür.", "expected": ["696"]}
+{"query": "Kirayəçinin kombi təmiri üçün çəkdiyi zəruri xərcləri Ev sahibi ödəmir.", "expected": ["680"]}
+{"query": "Müqavilə bağlanmazdan əvvəl Kirayəçi bron haqqı ödəyir və bu məbləğ geri qaytarılmır.", "expected": ["688"]}

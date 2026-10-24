@@ -1,0 +1,122 @@
+{
+ "doc": "kiraye_synthetic_01.txt",
+ "condition": "norag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:15:27.841683+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1208,
+  "output_tokens": 6323,
+  "cost_usd": null,
+  "latency_ms": 27227
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə mənzilin yerini, növünü və yaşayış məqsədilə kirayə verilməsini müəyyən edir, standart müqavilə şərtidir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə müqavilənin müddətini və qüvvəyə minmə tarixini müəyyən edir, standart şərtidir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Bu maddə aylıq kirayə haqqının məbləğini və ödəniş qaydasını müəyyən edir, aydın və standart şərtidir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Bu maddə ev sahibinə kirayə haqqını istənilən vaxt və xəbərdarlıqsız artırma hüququ verir ki, bu da sizin üçün çox əlverişsizdir və büdcənizi qeyri-müəyyən edir. Kirayə haqqı artımı üçün ədalətli qaydalar və bildiriş müddəti olmalıdır.",
+   "suggestion": "Ev sahibi kirayə haqqını artırmaq istədiyi təqdirdə, Kirayəçiyə ən azı 2 (iki) ay əvvəlcədən yazılı xəbərdarlıq etməlidir. Kirayə haqqı müqavilə müddəti ərzində ildə bir dəfədən artıq artırıla bilməz və artım məbləği Mərkəzi Bankın müəyyən etdiyi illik inflyasiya səviyyəsini keçməməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin heç bir halda qaytarılmaması sizin üçün qəbuledilməzdir. Depozit mənzilə dəyən zərərin və ya ödənilməmiş borcların qarşılığında saxlanılır və müqavilə bitdikdə mənzil normal vəziyyətdə təhvil verilərsə, sizə geri qaytarılmalıdır.",
+   "suggestion": "Kirayəçi müqavilə bağlanarkən 1200 manat məbləğində depozit ödəyir. Bu depozit mənzilə vurulmuş zərərləri (normal köhnəlmə istisna olmaqla) və ya ödənilməmiş kirayə/kommunal borcları ödəmək üçün nəzərdə tutulur. Müqavilə müddəti başa çatdıqda və mənzil ilkin vəziyyətdə (normal köhnəlmə nəzərə alınmaqla) təhvil verildikdə, depozit tam şəkildə Kirayəçiyə geri qaytarılır. Depozitdən hər hansı tutulma baş verərsə, bu, sənədləşdirilmiş sübutlarla (foto/video) əsaslandırılmalı və Kirayəçiyə yazılı bildiriş göndərilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Hər gün üçün aylıq kirayə haqqının 10%-i çox yüksək cərimədir və kiçik bir gecikmə belə sizin üçün böyük maddi yük yarada bilər. Cərimə məbləği daha məntiqli və ədalətli olmalıdır.",
+   "suggestion": "Ödəniş ən azı 7 (yeddi) təqvim günü gecikdikdə, Kirayəçi hər gecikmə günü üçün gecikmiş məbləğin 0.1%-i miqdarında cərimə ödəyir, lakin ümumi cərimə məbləği aylıq kirayə haqqının ən çox 10%-ni keçməməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "access_privacy",
+   "explanation": "Bu maddə sizin şəxsi həyatınızın toxunulmazlığını pozur. Ev sahibinin mənzilə daxil olması üçün sizə əvvəlcədən xəbərdarlıq etməsi və sizin razılığınızı alması lazımdır, fövqəladə hallar istisna olmaqla.",
+   "suggestion": "Ev sahibi mənzilə daxil olmaq istədiyi təqdirdə, fövqəladə hallar (yanğın, su sızması kimi təcili təhlükələr) istisna olmaqla, Kirayəçiyə ən azı 24 (iyirmi dörd) saat əvvəlcədən yazılı xəbərdarlıq etməli və Kirayəçinin razılığını almalıdır. Baxışlar Kirayəçi üçün uyğun vaxtda, onun iştirakı ilə və ya onun icazəsi ilə aparılmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu maddəyə görə normal köhnəlmədən və ya konstruktiv nasazlıqlardan yaranan böyük təmir xərcləri də sizin üzərinizə düşür ki, bu ədalətli deyil. Adətən, belə ciddi təmir xərcləri ev sahibinin məsuliyyətində olmalıdır. Siz yalnız öz səhvinizdən yaranan zərərlərə görə cavabdeh olmalısınız.",
+   "suggestion": "Mənzildə normal köhnəlmədən irəli gələn, eləcə də əsas struktur elementlərində (kombi, su boruları, elektrik sistemi, binanın konstruktiv hissələri) yaranan ciddi nasazlıqların təmiri xərcləri Ev sahibinin hesabına ödənilir. Kirayəçi öz səhvi nəticəsində mənzilə vurduğu zərərlərin (normal köhnəlmə istisna olmaqla) təmiri xərclərini ödəyir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Bu maddə kommunal xərclərin sizin tərəfinizdən, istifadə etdiyiniz qədər ödənilməsini nəzərdə tutur ki, bu da standart və ədalətli bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu maddə ev sahibinə cəmi 3 gün şifahi xəbərdarlıqla sizi evdən çıxarmaq hüququ verir ki, bu da sizin üçün çox qeyri-sabit vəziyyət yaradır. Eyni zamanda, sizin müqaviləni ləğv etməyiniz halında 3 aylıq kirayə haqqı məbləğində kompensasiya ödəməniz tələb olunur ki, bu da tərəflər arasında qeyri-bərabərliyi göstərir. Hər iki tərəf üçün xəbərdarlıq müddəti və öhdəliklər balanslı olmalıdır.",
+   "suggestion": "Müqavilənin müddəti başa çatmazdan əvvəl tərəflərdən hər hansı biri müqaviləni birtərəfli qaydada ləğv etmək istədiyi təqdirdə, digər tərəfə ən azı 2 (iki) ay əvvəlcədən yazılı xəbərdarlıq etməlidir. Xəbərdarlıq müddətinə riayət olunmadığı təqdirdə, xəbərdarlıq edən tərəf digər tərəfə 1 (bir) aylıq kirayə haqqı məbləğində kompensasiya ödəyir. Fövqəladə hallarda (məsələn, mənzilin yaşayış üçün təhlükəli vəziyyətə düşməsi) müqavilə dərhal ləğv edilə bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "medium",
+   "category": "usage_rules",
+   "explanation": "Bu maddə mənzildə ev heyvanı saxlamağı qadağan edir. Əgər ev heyvanınız varsa və ya gələcəkdə saxlamağı düşünürsünüzsə, bu maddə sizin üçün problem yarada bilər. Bu şərt ev sahibi tərəfindən qoyulan məhdudiyyətdir, lakin bəzən müzakirə oluna bilər.",
+   "suggestion": "Kirayəçi ev sahibinin yazılı razılığı ilə mənzildə ev heyvanı saxlaya bilər. Ev heyvanının mənzilə zərər verməsi halında, Kirayəçi dəymiş zərəri qarşılamağı öhdəsinə götürür.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə müqavilədə qeyd olunmayan hallarda Azərbaycan qanunlarının tətbiq olunacağını bildirir ki, bu da standart və vacib bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə müqavilənin neçə nüsxədə tərtib olunduğunu və tərəflər arasında bölüşdürülməsini təsdiq edir ki, bu da standart və düzgün bir prosesdir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 2
+}
