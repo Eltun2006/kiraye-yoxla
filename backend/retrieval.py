@@ -24,6 +24,8 @@ DENSE_ONLY = {"gemini-embedding-001"}
 class LawContext:
     articles: dict[str, LawArticle]                                # id -> article, all candidates
     candidates: dict[int, list[str]] = field(default_factory=dict)  # clause idx -> article ids
+    mode: str = ""      # "dense" | "hybrid" | "bm25" (embedding failed)
+    corpus: int = 0     # articles searched
 
 
 def _dense_ranking(db: Session, vec: list[float], arts: list[LawArticle]) -> list[str]:
@@ -60,13 +62,14 @@ def build_context(db: Session, clauses: list[Clause]) -> LawContext | None:
         # Articles sharing no word with the clause get no vote (a zero-score "ranking" is just noise).
         lexical = [ids[i] for i in np.argsort(-scores)[:DENSE_N] if scores[i] > 0]
         if vec is None:
-            ranking = lexical
+            mode, ranking = "bm25", lexical
         elif model in DENSE_ONLY:
-            ranking = _dense_ranking(db, vec, arts)
+            mode, ranking = "dense", _dense_ranking(db, vec, arts)
         else:
-            ranking = law.rrf(_dense_ranking(db, vec, arts), lexical)
+            mode, ranking = "hybrid", law.rrf(_dense_ranking(db, vec, arts), lexical)
         candidates[clause.idx] = ranking[:TOP_K]
 
     by_id = {a.id: a for a in arts}
     used = {i for ids_ in candidates.values() for i in ids_}
-    return LawContext(articles={i: by_id[i] for i in sorted(used, key=int)}, candidates=candidates)
+    return LawContext(articles={i: by_id[i] for i in sorted(used, key=int)}, candidates=candidates,
+                      mode=mode if clauses else "", corpus=len(arts))

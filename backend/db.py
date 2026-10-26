@@ -54,6 +54,7 @@ class Analysis(Base):
     latency_ms: Mapped[int | None] = mapped_column(Integer)
     # citations the LLM made outside the retrieved candidates (dropped / flagged) — should stay 0
     invalid_refs: Mapped[int | None] = mapped_column(Integer)
+    trace: Mapped[dict | None] = mapped_column(JSON)  # per-stage timings, tokens, retrieval mode (UI: "Necə işləyir")
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
     )
@@ -77,6 +78,7 @@ class ClauseRow(Base):
     decision: Mapped[str] = mapped_column(String(10), default="pending")
     user_text: Mapped[str | None] = mapped_column(Text)
     law_refs: Mapped[list[str] | None] = mapped_column(JSON, default=list)  # validated article ids, e.g. ["688"]
+    law_candidates: Mapped[list[str] | None] = mapped_column(JSON)  # what retrieval offered the LLM for this clause
 
     analysis: Mapped[Analysis] = relationship(back_populates="clauses")
 

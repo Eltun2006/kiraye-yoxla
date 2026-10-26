@@ -56,6 +56,7 @@ def test_full_flow(client):
     assert r.status_code == 202
     a = client.get(f"/analyses/{r.json()['id']}").json()
     assert a["status"] == "done" and len(a["clauses"]) == 13
+    assert a["trace"]["parse_ms"] >= 0 and a["trace"]["retrieval_mode"] is None  # no law table in this test
 
     deposit = next(c for c in a["clauses"] if c["idx"] == 5)
     assert client.patch(f"/analyses/{a['id']}/clauses/{deposit['id']}", json={"decision": "accepted"}).status_code == 200
@@ -108,3 +109,9 @@ def test_cited_articles_are_returned_and_reported(client):
     assert [l["id"] for l in a["laws"]] == ["688"] and "iki mislindən" in a["laws"][0]["text"]
     report = client.get(f"/analyses/{a['id']}/report.md").text
     assert "Mülki Məcəllə, maddə 688" in report and "e-qanun.az" in report
+
+
+def test_eval_results_are_served(client):
+    data = client.get("/eval").json()
+    assert data["retrieval"]["n_queries"] == 20
+    assert "baseline" in data["risk"]["all"] and "coverage" in data["risk"]

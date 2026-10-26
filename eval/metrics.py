@@ -122,16 +122,18 @@ def metric_table(results: dict, cols: list[str], names: dict) -> list[str]:
     return lines
 
 
-def report(results: dict, gold: dict, held_out: dict) -> str:
+def report(results: dict, gold: dict, held_out: dict, cov: dict) -> str:
     names = {"baseline": "Açar söz baseline", "norag": "LLM (RAG-sız)", "rag": "LLM + qanun RAG"}
     cols = [c for c in ("baseline", "norag", "rag") if c in results]
     labels = Counter(r["gold"] for r in gold.values())
     lines = [
         "# Qiymətləndirmə nəticələri",
         "",
-        f"Dataset: {len(gold)} bənd, 5 sintetik müqavilə (gold: high {labels['high']}, medium {labels['medium']}, "
-        f"low {labels['low']}). LLM rejimləri hər müqavilə üzrə {results[cols[-1]]['runs']} dəfə işlədilib; "
-        "rəqəmlər qaçışların ortalamasıdır. Etiketlər: `eval/dataset.jsonl`.",
+        f"Dataset: {len(gold)} bənd, {len(cov['docs'])} / {cov['total_docs']} sintetik müqavilə (gold: high "
+        f"{labels['high']}, medium {labels['medium']}, low {labels['low']}). LLM rejimləri hər müqavilə üzrə "
+        f"{cov['runs']} dəfə işlədilib; rəqəmlər qaçışların ortalamasıdır. Etiketlər: `eval/dataset.jsonl`.",
+        *([] if cov["complete"] else ["", "> ⚠️ **İlkin nəticə:** qiymətləndirmə hələ tamamlanmayıb (Gemini pulsuz "
+                                      "limiti). Bütün üsullar eyni müqavilə və qaçışlar üzərində müqayisə olunur."]),
         "",
         "## Bütün dataset",
         "",
@@ -148,9 +150,12 @@ def report(results: dict, gold: dict, held_out: dict) -> str:
         f"{fmt(results[c]['min_accuracy'])}–{fmt(results[c]['max_accuracy'])}" for c in cols) + " |")
 
     n_ho = len([k for k in gold if k[0] in HELD_OUT])
-    lines += ["", f"## Held-out: 04 və 05 ({n_ho} bənd)", "",
+    if held_out:
+        lines += ["", f"## Held-out: 04 və 05 ({n_ho} bənd)", "",
               "Prompt və baseline qaydaları 01–03-ə baxaraq hazırlanıb; 04–05 sonradan yazılıb. "
               "Ədalətli müqayisə budur.", "", *metric_table(held_out, cols, names)]
+    else:
+        lines += ["", "## Held-out: 04 və 05", "", "Hələ işlədilməyib."]
 
     lines += ["", "## Səhv və sərhəd hallar (çoxluq səsi qəbul edilən dəstdə deyil)", "",
               "| Bənd | Gold | " + " | ".join(names[c] for c in cols) + " | Qeyd |", "|---|---|" + "---|" * len(cols) + "---|"]
@@ -163,18 +168,45 @@ def report(results: dict, gold: dict, held_out: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def coverage(by_cond: dict[str, list[dict]], gold: dict) -> tuple[list[str], list[int]]:
+    """Contracts and run numbers that EVERY LLM condition has, so the methods are compared on equal footing
+    (the free-tier quota can stop a run halfway). Without LLM runs: all contracts."""
+    docs = sorted({d for d, _ in gold})
+    if not by_cond:
+        return docs, []
+    have = [{(r["doc"], r["run"]) for r in runs} for runs in by_cond.values()]
+    common = set.intersection(*have)
+    run_ids = sorted({n for _, n in common})
+    docs = [d for d in docs if any((d, n) in common for n in run_ids)]
+    # keep only run numbers present for every covered contract
+    run_ids = [n for n in run_ids if all((d, n) in common for d in docs)]
+    return docs, run_ids
+
+
 def main() -> None:
-    gold = load_dataset()
+    gold_all = load_dataset()
+    by_cond = load_runs(ROOT / "eval" / "runs")
+    docs, run_ids = coverage(by_cond, gold_all)
+    gold = {k: v for k, v in gold_all.items() if k[0] in docs}
     ho_gold = {k: v for k, v in gold.items() if k[0] in HELD_OUT}
-    results, held_out = {"baseline": baseline_summary(gold)}, {"baseline": baseline_summary(ho_gold)}
-    for cond, runs in load_runs(ROOT / "eval" / "runs").items():
+    results = {"baseline": baseline_summary(gold)}
+    held_out = {"baseline": baseline_summary(ho_gold)} if ho_gold else {}
+    for cond, runs in by_cond.items():
+        runs = [r for r in runs if r["doc"] in docs and r["run"] in run_ids]
+        if not runs:
+            continue
         results[cond] = summarize(runs, gold)
-        held_out[cond] = summarize([r for r in runs if r["doc"] in HELD_OUT], ho_gold)
-    text = report(results, gold, held_out)
+        if ho_gold:
+            held_out[cond] = summarize([r for r in runs if r["doc"] in HELD_OUT], ho_gold)
+    all_docs = sorted({d for d, _ in gold_all})
+    cov = {"docs": docs, "total_docs": len(all_docs), "clauses": len(gold), "total_clauses": len(gold_all),
+           "runs": len(run_ids), "complete": docs == all_docs and len(run_ids) >= 3}
+    text = report(results, gold, held_out, cov)
     (ROOT / "eval" / "results.md").write_text(text, encoding="utf-8")
     strip = lambda rs: {c: {k: v for k, v in r.items() if k != "majority"} for c, r in rs.items()}  # noqa: E731
-    (ROOT / "eval" / "results.json").write_text(
-        json.dumps({"all": strip(results), "held_out": strip(held_out)}, ensure_ascii=False, indent=2), encoding="utf-8")
+    (ROOT / "eval" / "results.json").write_text(json.dumps(
+        {"coverage": cov, "all": strip(results), "held_out": strip(held_out)}, ensure_ascii=False, indent=2,
+        default=str), encoding="utf-8")
     print(text)
 
 

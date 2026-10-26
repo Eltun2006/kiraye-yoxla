@@ -1,5 +1,7 @@
 """FastAPI backend + static frontend. Run: uvicorn backend.main:app --reload  → http://localhost:8000"""
+import json
 import threading
+import time
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -24,6 +26,7 @@ from .security import CSP, SECURITY_HEADERS, RateLimiter, check_upload, client_i
 ROOT = Path(__file__).resolve().parents[1]
 FRONTEND = ROOT / "frontend"
 SAMPLES = ROOT / "data" / "samples"
+EVAL = ROOT / "eval"
 
 limiter = RateLimiter(settings.rate_limit_per_hour, window_s=3600)
 
@@ -119,6 +122,15 @@ def get_sample(name: str):
     return FileResponse(path, filename=name)
 
 
+@app.get("/eval")
+def eval_results():
+    """Offline evaluation results (eval/*.py writes them; committed with the code) for the results page."""
+    def read(name):
+        p = EVAL / name
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+    return {"retrieval": read("retrieval_results.json"), "risk": read("results.json")}
+
+
 def _laws_for(db, a: Analysis) -> list[LawOut]:
     ids = {r for c in a.clauses for r in (c.law_refs or [])}
     rows = db.scalars(select(LawArticle).where(LawArticle.id.in_(ids))).all() if ids else []
@@ -141,6 +153,7 @@ def _run_pipeline(analysis_id: int, filename: str, data: bytes) -> None:
         try:
             a.status = "parsing"
             db.commit()
+            t0 = time.perf_counter()
             text = extract_text(filename, data)
             if len(text) > settings.max_chars:  # refuse rather than silently analyse half a contract
                 raise ParseError(f"Müqavilə çox uzundur ({len(text):,} simvol). Maksimum {settings.max_chars:,} "
@@ -150,16 +163,19 @@ def _run_pipeline(analysis_id: int, filename: str, data: bytes) -> None:
                 raise ParseError("Müqavilədə bənd tapılmadı.")
             if len(clauses) > settings.max_clauses:
                 raise ParseError(f"Müqavilədə {len(clauses)} bənd var; maksimum {settings.max_clauses} dəstəklənir.")
+            parse_ms = int((time.perf_counter() - t0) * 1000)
             a.preamble = preamble
             a.clauses = [ClauseRow(idx=c.idx, text=c.text) for c in clauses]
             a.status = "analyzing"
             db.commit()
 
+            t0 = time.perf_counter()
             try:
                 ctx = build_context(db, clauses)
             except Exception as e:  # retrieval is an enhancement: analyse without citations rather than fail
                 print(f"[analysis {analysis_id}] law retrieval failed: {e!r}")
                 ctx = None
+            retrieval_ms = int((time.perf_counter() - t0) * 1000)
             result, metrics = analyze_clauses(clauses, ctx)
             by_idx = {r.clause_index: r for r in result.assessments}
             for row in a.clauses:
@@ -167,9 +183,16 @@ def _run_pipeline(analysis_id: int, filename: str, data: bytes) -> None:
                 row.risk, row.category = r.risk, r.category
                 row.explanation, row.suggestion = r.explanation, r.suggestion or None
                 row.law_refs = r.law_refs
+                row.law_candidates = ctx.candidates.get(row.idx) if ctx else None
             a.summary = result.summary
             a.model, a.cost_usd, a.latency_ms = metrics["model"], metrics["cost_usd"], metrics["latency_ms"]
             a.invalid_refs = metrics.get("invalid_refs")
+            a.trace = {
+                "parse_ms": parse_ms, "retrieval_ms": retrieval_ms, "llm_ms": metrics.get("latency_ms"),
+                "input_tokens": metrics.get("input_tokens"), "output_tokens": metrics.get("output_tokens"),
+                "retrieval_mode": ctx.mode if ctx else None, "embed_model": current_model() if ctx else None,
+                "law_corpus": ctx.corpus if ctx else 0, "law_in_prompt": len(ctx.articles) if ctx else 0,
+            }
             a.status = "done"
         except (ParseError, AnalysisError) as e:
             a.status, a.error = "failed", str(e)

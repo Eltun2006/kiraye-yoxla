@@ -49,6 +49,7 @@ class ClauseOut(BaseModel):
     decision: str
     user_text: str | None
     law_refs: list[str] | None = None
+    law_candidates: list[str] | None = None
 
 
 class LawOut(BaseModel):
@@ -72,6 +73,7 @@ class AnalysisOut(BaseModel):
     cost_usd: float | None
     latency_ms: int | None
     invalid_refs: int | None = None
+    trace: dict | None = None
     created_at: datetime
     clauses: list[ClauseOut] = []
     laws: list[LawOut] = []  # the cited articles, so the UI can show their text

@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT))
 
 from backend.analyzer import AnalysisError, analyze_clauses  # noqa: E402
 from backend.config import settings  # noqa: E402
+from backend.law import current_model  # noqa: E402
 from backend.parsing import extract_text, split_clauses  # noqa: E402
 
 RUNS_DIR = ROOT / "eval" / "runs"
@@ -36,6 +37,7 @@ def run_one(doc: str, condition: str, clauses, ctx) -> dict:
             analysis, metrics = analyze_clauses(clauses, ctx if condition == "rag" else None)
             return {
                 "doc": doc, "condition": condition, "provider": settings.llm_provider,
+                "embed_model": current_model() if condition == "rag" else None,
                 "created_at": datetime.now(timezone.utc).isoformat(),
                 "metrics": metrics,
                 "candidates": {str(k): v for k, v in ctx.candidates.items()} if condition == "rag" else {},

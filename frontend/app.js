@@ -92,6 +92,7 @@ async function route() {
   const m = hash.match(/^#\/a\/([\w-]+)/);
   if (m) { setNav(""); return showAnalysis(m[1], token); }
   if (hash.startsWith("#/history")) { setNav("history"); return showHistory(); }
+  if (hash.startsWith("#/eval")) { setNav("eval"); return showEval(); }
   setNav("home");
   return showHome();
 }
@@ -349,6 +350,7 @@ function renderResult(a) {
         <div class="card card-pad" id="export"></div>
       </aside>
     </div>
+    <section class="card card-pad trace" id="trace"></section>
   </div>`;
 
   const $ = (s) => app.querySelector(s);
@@ -437,6 +439,15 @@ function renderResult(a) {
               <a class="law-link" href="${esc(laws[r].source_url)}" target="_blank" rel="noopener">e-qanun.az-da rəsmi mətn ↗</a>
             </details>`).join("")}
           <p class="law-note">Maddələr avtomatik seçilib. Mətn rəsmidir, amma bu hüquqi məsləhət deyil.</p>
+        </div>` : ""}
+      ${c.law_candidates?.length ? `
+        <div class="section">
+          <div class="label">Axtarış · modelə verilən maddələr</div>
+          <div class="cands">${c.law_candidates.map((id, i) => {
+            const cited = (c.law_refs || []).includes(id);
+            return `<span class="cand ${cited ? "cited" : ""}" title="${cited ? "Model bu maddəyə istinad etdi" : "Model istifadə etmədi"}"><small>${i + 1}</small>§ ${esc(id)}</span>`;
+          }).join("")}</div>
+          <p class="law-note">Retrieval bu bənd üçün ${c.law_candidates.length} maddə tapdı (yaxınlıq sırası ilə). Yaşıl olanlara model istinad etdi; siyahıdan kənar istinad qəbul edilmir.</p>
         </div>` : ""}
       <div class="section">
         <div class="label">Hazırkı mətn</div>
@@ -528,6 +539,39 @@ function renderResult(a) {
     };
   }
 
+  function renderTrace() {
+    const t = a.trace;
+    const box = $("#trace");
+    if (!t) { box.remove(); return; } // analyses made before the trace existed
+    const MODE = { dense: "dense: embedding → pgvector", hybrid: "hibrid: embedding + BM25 (RRF)", bm25: "yalnız BM25 (embedding xətası)" };
+    const total = (t.parse_ms || 0) + (t.retrieval_ms || 0) + (t.llm_ms || 0) || 1;
+    const sec = (ms) => (ms >= 1000 ? `${(ms / 1000).toFixed(1)} san` : `${ms} ms`);
+    const num = (n) => (n || 0).toLocaleString("az-AZ");
+    const steps = [
+      ["Parser", "Mətn çıxarılır, bəndlərə bölünür", t.parse_ms, `${a.clauses.length} bənd`],
+      ["Retrieval", t.retrieval_mode ? MODE[t.retrieval_mode] : "qanun bazası boşdur", t.retrieval_ms,
+        t.law_corpus ? `${t.law_corpus} maddədən ${t.law_in_prompt} seçildi` : "—"],
+      ["LLM", esc(a.model || ""), t.llm_ms, `${num(t.input_tokens)} → ${num(t.output_tokens)} token`],
+      ["Guardrail", "İstinad yalnız verilən maddələrə", null, a.invalid_refs ? `${a.invalid_refs} istinad atıldı` : "0 əsassız istinad ✓"],
+    ];
+    box.innerHTML = `
+      <div class="trace-head">
+        <div><span class="eyebrow">Necə işləyir</span><h3>Bu analizin pipeline-ı</h3></div>
+        <span class="muted">Cəmi ${sec(total)}${t.embed_model ? ` · embedding: ${esc(t.embed_model)}` : ""}</span>
+      </div>
+      <ol class="pipeline">${steps.map(([name, what, ms, out], i) => `
+        <li>
+          <span class="pn">${i + 1}</span>
+          <div class="pbody">
+            <b>${name}</b><span class="muted">${what}</span>
+            <div class="ptime">${ms != null
+              ? `<div class="track" title="${name}: ${sec(ms)}"><i style="width:${Math.max(1.5, (ms / total) * 100)}%"></i></div><span>${sec(ms)}</span>`
+              : `<span class="muted">deterministik yoxlama</span>`}</div>
+            <span class="pout">${out}</span>
+          </div>
+        </li>`).join("")}</ol>`;
+  }
+
   $("#del").onclick = () => {
     const m = openModal("Analizi silmək?", `
       <p>Müqavilənin mətni, analiz və bütün qərarlarınız serverdən birdəfəlik silinəcək.</p>
@@ -547,7 +591,92 @@ function renderResult(a) {
     };
   };
 
-  renderChips(); renderClauses(); renderSummary(); renderDetail(); renderExport();
+  renderChips(); renderClauses(); renderSummary(); renderDetail(); renderExport(); renderTrace();
+}
+
+/* =========================================================
+   EVAL: offline evaluation results (eval/*.py)
+   ========================================================= */
+const pct = (x) => (x == null ? "—" : `${Math.round(x * 100)}%`);
+
+// One measure per chart and one hue: the method used in production is highlighted, the others are context.
+function hbars(rows, { value, label, note, highlight }) {
+  return `<div class="hbars">${rows.map((r) => `
+    <div class="hbar ${highlight(r) ? "on" : ""}" title="${esc(label(r))}: ${pct(value(r))} · ${esc(note(r))}">
+      <span class="hl-name">${esc(label(r))}</span>
+      <span class="hl-track"><i style="width:${(value(r) || 0) * 100}%"></i></span>
+      <span class="hl-val">${pct(value(r))}</span>
+      <span class="hl-note">${esc(note(r))}</span>
+    </div>`).join("")}</div>`;
+}
+
+async function showEval() {
+  app.innerHTML = `<p class="muted">Yüklənir...</p>`;
+  let data;
+  try {
+    data = await (await api("/eval")).json();
+  } catch (e) {
+    app.innerHTML = `<div class="card empty"><div class="big">⚠️</div><p>${esc(e.message)}</p></div>`;
+    return;
+  }
+  const ret = (data.retrieval?.results || []).filter((r) => r.method.endsWith("bütöv maddə"));
+  const best = ret.find((r) => r.method.startsWith("gemini /"));
+  const cov = data.risk?.coverage;
+  const R = data.risk?.all || {};
+  const NAMES = { baseline: "Açar söz qaydaları", norag: "LLM, qanunsuz", rag: "LLM + qanun (RAG)" };
+  const cols = ["baseline", "norag", "rag"].filter((c) => R[c]);
+  const ROWS = [
+    ["accuracy", "Düzgün qiymət", "cavab qəbul edilən dəstdədir"],
+    ["high_recall", "Ciddi riskin tapılması", "yüksək riskli bənd “yüksək” göründü"],
+    ["false_alarm", "Yalançı həyəcan", "normal bəndə risk deyildi (az = yaxşı)"],
+    ["stability", "Sabitlik", "təkrar işlədəndə eyni cavab"],
+    ["law_hit", "Doğru qanun maddəsi", "gözlənilən maddəyə istinad etdi"],
+  ];
+
+  app.innerHTML = `
+  <div class="fade-in eval">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">Keyfiyyət</span><h1>Sistem nə qədər dəqiqdir?</h1>
+        <p class="muted lead-sm">Rəqəmlər etiketlənmiş sintetik müqavilələr üzərində ayrıca skriptlərlə ölçülüb (<code>eval/</code>).</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="card stat"><b>${pct(best?.["hit@5"])}</b><span>doğru qanun maddəsi ilk 5 nəticədə</span></div>
+      <div class="card stat"><b>${R.rag ? R.rag.invalid_refs : "—"}</b><span>uydurma qanun istinadı (guardrail)</span></div>
+      <div class="card stat"><b>${pct(R.rag?.accuracy)}</b><span>bəndin riski düzgün qiymətləndirildi${cov && !cov.complete ? " (ilkin)" : ""}</span></div>
+    </div>
+
+    <section class="card card-pad">
+      <span class="eyebrow">1 · Qanun axtarışı (retrieval)</span>
+      <h3>Uyğun maddə ilk 5 nəticədədirmi? (hit@5)</h3>
+      <p class="muted sm">${data.retrieval?.n_queries ?? 0} əl ilə etiketlənmiş bənd · Mülki Məcəllə, 33-cü fəsil (25 maddə). Rəngli sətir saytda istifadə olunan üsuldur.</p>
+      ${hbars(ret, {
+        value: (r) => r["hit@5"],
+        label: (r) => r.method.replace(" / bütöv maddə", "").replace("BM25s", "BM25"),
+        note: (r) => `MRR ${r.MRR.toFixed(2)}`,
+        highlight: (r) => r === best,
+      })}
+      <p class="muted sm">Lokal e5 modeli tək başına zəif idi (70%), ona görə əvvəl BM25 ilə hibrid işlənirdi (90%). Gemini embedding tək başına 100% verdi, BM25 qoşmaq onu pisləşdirdi (95%). İndi BM25 yalnız ehtiyat yoldur.</p>
+    </section>
+
+    <section class="card card-pad">
+      <span class="eyebrow">2 · Risk qiymətləndirməsi</span>
+      <h3>Üç üsulun müqayisəsi</h3>
+      ${cov && !cov.complete ? `<div class="warn">⏳ <b>İlkin nəticə.</b> ${cov.docs.length} / ${cov.total_docs} müqavilə, ${cov.clauses} bənd, hər üsul ${cov.runs} dəfə işlədilib. Qalanı Gemini-nin gündəlik limitinə görə sonra işlədiləcək. Bütün üsullar eyni bəndlər üzərində müqayisə olunur.</div>` : ""}
+      ${cols.length ? `
+      <div class="table-wrap"><table class="mtable">
+        <thead><tr><th>Metrika</th>${cols.map((c) => `<th>${NAMES[c]}</th>`).join("")}</tr></thead>
+        <tbody>${ROWS.map(([k, name, hint]) => `
+          <tr><th><b>${name}</b><small>${hint}</small></th>${cols.map((c) => `
+            <td title="${NAMES[c]} · ${name}: ${pct(R[c][k])}"><span class="cell-val">${pct(R[c][k])}</span>${R[c][k] != null ? `<span class="mini"><i style="width:${R[c][k] * 100}%"></i></span>` : ""}</td>`).join("")}</tr>`).join("")}
+          <tr><th><b>Orta vaxt</b><small>bir müqavilə üçün</small></th>${cols.map((c) => `<td><span class="cell-val">${c === "baseline" ? "~0 san" : `${R[c].latency_mean_s.toFixed(0)} san`}</span></td>`).join("")}</tr>
+        </tbody>
+      </table></div>` : `<p class="muted">Nəticə yoxdur.</p>`}
+      <p class="muted sm">“Açar söz qaydaları” LLM-siz sadə baseline-dır: AI-ın həqiqətən fayda verib-vermədiyini göstərir. Sərhəd hallarda etiket bir neçə cavabı qəbul edir (məs. orta və ya yüksək).</p>
+    </section>
+  </div>`;
 }
 
 /* =========================================================
