@@ -44,6 +44,20 @@
       "MRR": 0.622
     },
     {
+      "method": "gemini / bütöv maddə",
+      "hit@1": 0.85,
+      "hit@3": 0.95,
+      "hit@5": 1.0,
+      "MRR": 0.904
+    },
+    {
+      "method": "hybrid gemini+BM25s / bütöv maddə",
+      "hit@1": 0.75,
+      "hit@3": 0.85,
+      "hit@5": 0.95,
+      "MRR": 0.825
+    },
+    {
       "method": "BM25 / bəndlər",
       "hit@1": 0.4,
       "hit@3": 0.75,
@@ -84,6 +98,20 @@
       "hit@3": 0.8,
       "hit@5": 0.85,
       "MRR": 0.627
+    },
+    {
+      "method": "gemini / bəndlər",
+      "hit@1": 0.8,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "MRR": 0.892
+    },
+    {
+      "method": "hybrid gemini+BM25s / bəndlər",
+      "hit@1": 0.75,
+      "hit@3": 0.9,
+      "hit@5": 1.0,
+      "MRR": 0.839
     }
   ]
 }

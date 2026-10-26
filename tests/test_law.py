@@ -49,7 +49,8 @@ def law_db(monkeypatch):
     reset_db()
     with SessionLocal() as db:
         for i, (title, text, vec) in ARTICLES.items():
-            db.add(LawArticle(id=i, title=title, text=text, chapter="33", source_url="u", embedding=vec))
+            db.add(LawArticle(id=i, title=title, text=text, chapter="33", source_url="u", embedding=vec,
+                              embed_model=law.current_model()))
         db.commit()
     # Fake embedder: a deposit clause points at 688, everything else at 684.
     monkeypatch.setattr(law, "embed_queries", lambda texts: [unit(1) if "depozit" in t.lower() else unit(0) for t in texts])
@@ -109,3 +110,12 @@ def test_prompt_lists_law_and_per_clause_candidates():
     assert '<article id="688" title="Bron haqqı">' in prompt
     assert '<clause index="1" candidate_articles="688, 684">Depozit qaytarılmır.</clause>' in prompt
     assert "(no articles available)" in _format_input([Clause(1, "x")], None)
+
+
+def test_build_context_falls_back_to_bm25_when_embedding_fails(law_db, monkeypatch):
+    def broken(texts):
+        raise RuntimeError("429 quota")
+    monkeypatch.setattr(law, "embed_queries", broken)
+    with SessionLocal() as db:
+        ctx = retrieval.build_context(db, [Clause(1, "Təminat iki aylıq kirayə haqqıdır.")])
+    assert ctx.candidates[1][0] == "688"  # found lexically: "təminat", "kirayə haqqı"

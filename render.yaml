@@ -1,0 +1,27 @@
+# Render Blueprint: New → Blueprint → pick this repository. Free plan: 512 MB RAM, sleeps after 15 min idle.
+services:
+  - type: web
+    name: kiraye-yoxla
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    # One worker: the rate limiter lives in process memory
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: EMBED_PROVIDER
+        value: gemini
+      - key: TRUST_PROXY
+        value: "true"
+      - key: AUTO_INGEST_LAW
+        value: "true"
+      # Secrets: Render asks for these values when the Blueprint is created (never commit them)
+      - key: DATABASE_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false

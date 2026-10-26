@@ -1,0 +1,11 @@
+# Development: tests, sample generation, law scraping, local embeddings (EMBED_PROVIDER=local)
+-r requirements.txt
+pytest>=8.0
+httpx>=0.27
+fpdf2>=2.7
+# Local embedding model intfloat/multilingual-e5-base (~1.1 GB, downloaded on first use; ~1.5 GB RAM).
+# No GPU needed; the CPU build of torch takes far less disk:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=5.0
+# Only for scripts/scrape_law.py (needs a Chrome browser)
+selenium>=4.20

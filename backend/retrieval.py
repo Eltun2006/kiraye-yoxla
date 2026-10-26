@@ -1,4 +1,4 @@
-"""Per-clause law retrieval: hybrid dense (pgvector) + lexical (BM25) ranking, fused with RRF.
+"""Per-clause law retrieval: dense (pgvector) ranking, fused with lexical (BM25) via RRF for weaker models.
 
 The result is a LawContext: the candidate article ids for every clause, plus the texts of all
 candidates. The LLM may only cite from a clause's own candidates — analyzer.py enforces this.
@@ -15,6 +15,9 @@ from .parsing import Clause
 
 TOP_K = 5      # candidates per clause shown to the LLM (hit@5 = 90% in eval/retrieval_results.json)
 DENSE_N = 10   # how many nearest neighbours each retriever contributes to the fusion
+# Models strong enough alone: in eval/retrieval_results.json gemini-embedding-001 reaches hit@5 100% / MRR 0.90,
+# and fusing BM25 in makes it worse (95% / 0.82). The weaker local e5 needs the hybrid (70% alone → 90% fused).
+DENSE_ONLY = {"gemini-embedding-001"}
 
 
 @dataclass
@@ -27,8 +30,9 @@ def _dense_ranking(db: Session, vec: list[float], arts: list[LawArticle]) -> lis
     if db.bind.dialect.name == "postgresql":
         # `<=>` is pgvector's cosine distance; the database does the nearest-neighbour search.
         rows = db.execute(
-            text("SELECT id FROM law_articles ORDER BY embedding <=> CAST(:q AS vector) LIMIT :n"),
-            {"q": str(vec), "n": DENSE_N},
+            text("SELECT id FROM law_articles WHERE embed_model = :m "
+                 "ORDER BY embedding <=> CAST(:q AS vector) LIMIT :n"),
+            {"q": str(vec), "n": DENSE_N, "m": law.current_model()},
         )
         return [r[0] for r in rows]
     # SQLite fallback: same ranking in numpy (vectors are normalized, so dot product = cosine).
@@ -38,19 +42,30 @@ def _dense_ranking(db: Session, vec: list[float], arts: list[LawArticle]) -> lis
 
 def build_context(db: Session, clauses: list[Clause]) -> LawContext | None:
     """None when the law table is empty (ingest not run) — the analysis then runs without citations."""
-    arts = db.scalars(select(LawArticle).where(LawArticle.embedding.is_not(None))).all()
+    arts = db.scalars(select(LawArticle).where(LawArticle.embed_model == law.current_model())).all()
     if not arts:
-        return None
+        return None  # empty, or embedded with another model: re-run scripts/ingest_law.py
     bm25 = law.BM25([law.passage(a.id, a.title, a.text) for a in arts], stem=law.STEM)
     ids = [a.id for a in arts]
-    q_vecs = law.embed_queries([c.text for c in clauses])
+    model = law.current_model()
+    try:
+        q_vecs = law.embed_queries([c.text for c in clauses])
+    except Exception as e:  # API down / quota: lexical search alone still finds the right article 85% of the time
+        print(f"[retrieval] query embedding failed, BM25 only: {e!r}")
+        q_vecs = [None] * len(clauses)
 
     candidates = {}
     for clause, vec in zip(clauses, q_vecs):
         scores = np.array(bm25.scores(clause.text))
         # Articles sharing no word with the clause get no vote (a zero-score "ranking" is just noise).
         lexical = [ids[i] for i in np.argsort(-scores)[:DENSE_N] if scores[i] > 0]
-        candidates[clause.idx] = law.rrf(_dense_ranking(db, vec, arts), lexical)[:TOP_K]
+        if vec is None:
+            ranking = lexical
+        elif model in DENSE_ONLY:
+            ranking = _dense_ranking(db, vec, arts)
+        else:
+            ranking = law.rrf(_dense_ranking(db, vec, arts), lexical)
+        candidates[clause.idx] = ranking[:TOP_K]
 
     by_id = {a.id: a for a in arts}
     used = {i for ids_ in candidates.values() for i in ids_}

@@ -92,6 +92,7 @@ class LawArticle(Base):
     chapter: Mapped[str] = mapped_column(String(120))
     source_url: Mapped[str] = mapped_column(String(255))
     embedding = mapped_column(Embedding)
+    embed_model: Mapped[str | None] = mapped_column(String(80))  # vectors of different models don't compare
 
 
 def _alembic_config():

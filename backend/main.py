@@ -14,7 +14,7 @@ from .analyzer import AnalysisError, analyze_clauses
 from .config import settings
 from .db import Analysis, ClauseRow, LawArticle, SessionLocal, init_db
 from .ingest import has_law, ingest_law
-from .law import EMBED_MODEL, _model
+from .law import EMBED_MODEL, _model, current_model
 from .parsing import ParseError, extract_text, split_clauses
 from .report import build_message, build_report
 from .retrieval import build_context
@@ -51,7 +51,7 @@ async def lifespan(_: FastAPI):
         db.commit()
         purge_expired(db)
         law_ready = has_law(db)
-    if law_ready or settings.auto_ingest_law:
+    if (law_ready and settings.embed_provider == "local") or (not law_ready and settings.auto_ingest_law):
         # In the background: the server answers immediately; analyses started meanwhile simply wait for the
         # model lock (or run without citations if the law table is still empty).
         threading.Thread(target=_warm_up, args=(law_ready,), daemon=True).start()
@@ -60,11 +60,11 @@ async def lifespan(_: FastAPI):
 
 def _warm_up(law_ready: bool) -> None:
     try:
-        if law_ready:
-            _model(EMBED_MODEL)  # so the first analysis doesn't wait ~20 s for the model
-        else:
+        if not law_ready:
             with SessionLocal() as db:
-                print(f"[law] law table empty, auto-ingested {ingest_law(db)} articles")
+                print(f"[law] no vectors for {current_model()}, auto-ingested {ingest_law(db)} articles")
+        elif current_model() == EMBED_MODEL:
+            _model(EMBED_MODEL)  # local model: so the first analysis doesn't wait ~20 s to load it
     except Exception as e:  # never take the app down: analyses still work, just without citations
         print(f"[law] warm-up failed: {e!r}")
 

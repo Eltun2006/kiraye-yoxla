@@ -12,6 +12,11 @@ class Settings(BaseSettings):
 
     gemini_api_key: str = ""
     gemini_model: str = "gemini-2.5-flash"
+
+    # Law retrieval embeddings: "gemini" (API, light) | "local" (multilingual-e5-base, needs requirements-dev.txt)
+    embed_provider: str = "gemini"
+    gemini_embed_model: str = "gemini-embedding-001"
+
     database_url: str = "sqlite:///./kiraye.db"
     max_upload_mb: int = 5
     max_chars: int = 40_000

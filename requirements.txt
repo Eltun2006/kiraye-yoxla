@@ -1,4 +1,5 @@
-﻿anthropic>=0.70
+# Runtime (what the server installs — fits a 512 MB free instance: no torch, embeddings via the Gemini API)
+anthropic>=0.70
 fastapi>=0.115
 uvicorn[standard]>=0.30
 python-multipart>=0.0.9
@@ -8,17 +9,7 @@ sqlalchemy>=2.0
 psycopg2-binary>=2.9
 pypdf>=4.2
 python-docx>=1.1
-pytest>=8.0
-httpx>=0.27
 google-genai>=1.0
-fpdf2>=2.7
-# --- 3-cü həftə: qanun RAG ---
 alembic>=1.16
 pgvector>=0.5
 numpy>=2.0
-# Lokal embedding modeli (intfloat/multilingual-e5-base, ~1.1 GB, ilk istifadədə yüklənir).
-# GPU lazım deyil; CPU versiyası diskdə xeyli az yer tutur:
-#   pip install torch --index-url https://download.pytorch.org/whl/cpu
-sentence-transformers>=5.0
-# Yalnız scripts/scrape_law.py üçün (Chrome brauzeri lazımdır)
-selenium>=4.20

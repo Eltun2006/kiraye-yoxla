@@ -20,7 +20,8 @@ from backend.law import BM25, STEM, chunk_articles, embed_passages, embed_querie
 
 QUERIES = [json.loads(l) for l in (ROOT / "eval" / "retrieval_queries.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
 KS = (1, 3, 5)
-MODELS = ["intfloat/multilingual-e5-small", "intfloat/multilingual-e5-base"]  # BAAI/bge-m3 (2.2 GB) did not fit on disk
+# BAAI/bge-m3 (2.2 GB) did not fit on disk; gemini-embedding-001 is the API model used in deployment
+MODELS = ["intfloat/multilingual-e5-small", "intfloat/multilingual-e5-base", "gemini-embedding-001"]
 
 
 def ranked_articles(scores, chunk_arts: list[str], positive_only: bool = False) -> list[str]:
@@ -62,7 +63,7 @@ def main() -> None:
         results.append(evaluate(f"BM25 / {strategy}", lambda q: ranked_articles(bm25.scores(q), arts)))
         results.append(evaluate(f"BM25+stem{STEM} / {strategy}", lex))
         for model in MODELS:
-            short = model.split("/")[1].replace("multilingual-", "")
+            short = model.split("/")[-1].replace("multilingual-", "").replace("-embedding-001", "")
             p_vecs = np.array(embed_passages(passages, model))
             q_vecs = dict(zip(queries, np.array(embed_queries(queries, model))))
             dense = lambda q, p=p_vecs, v=q_vecs: ranked_articles(p @ v[q], arts)  # noqa: E731

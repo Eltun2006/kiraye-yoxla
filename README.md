@@ -1,14 +1,3 @@
----
-title: KirayəYoxla
-emoji: 🏠
-colorFrom: green
-colorTo: yellow
-sdk: docker
-app_port: 7860
-pinned: false
-short_description: Kirayə müqaviləsində riskli bəndləri tapır
----
-
 # 🏠 KirayəYoxla
 
 Kirayə müqaviləsini yükləyin. Sistem müqaviləni bəndlərə bölür, hər bəndin kirayəçi üçün riskini qiymətləndirir, sadə dildə izah edir və daha ədalətli alternativ mətn təklif edir. Siz təklifləri qəbul edir, rədd edir və ya redaktə edirsiniz, sonra hesabatı və ev sahibinə göndəriləcək danışıq mesajını ixrac edirsiniz.
@@ -22,8 +11,8 @@ Plan, ideyalar və roadmap üçün [docs/LAYIHE_PLANI.md](docs/LAYIHE_PLANI.md) 
 Web UI (HTML/CSS/JS) ──HTTP──▶ FastAPI ──▶ parsing (pypdf / python-docx → bəndlər)
                                  │
                                  ├─▶ retrieval: hər bənd üçün top-5 qanun maddəsi
-                                 │     dense: multilingual-e5-base → pgvector (cosine)
-                                 │     lexical: BM25 (5 hərfli prefix)   ── RRF ilə birləşdirilir
+                                 │     dense: gemini-embedding-001 (768) → pgvector (cosine)
+                                 │     ehtiyat: BM25 (5 hərfli prefix), API xəta verəndə
                                  │
                                  ├─▶ LLM (Gemini / Claude, structured output → Pydantic)
                                  │     <law> maddələr + <contract> bəndlər → risk, izah, təklif, law_refs
@@ -36,7 +25,7 @@ Web UI (HTML/CSS/JS) ──HTTP──▶ FastAPI ──▶ parsing (pypdf / pyth
 ## İşə salma (Windows PowerShell)
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt
+.\.venv\Scripts\pip install -r requirements-dev.txt   # server üçün requirements.txt kifayətdir
 copy .env.example .env      # GEMINI_API_KEY və ya ANTHROPIC_API_KEY dəyərini yazın
 
 # 0) PostgreSQL (Docker Desktop açıq olmalıdır) → 127.0.0.1:55432
@@ -93,11 +82,17 @@ Hər bəndin yanında Mülki Məcəllənin uyğun maddəsi göstərilir (§ 688)
 | BM25 + 5 hərfli stem | 55% | 80% | 85% |
 | e5-small (dense) | 30% | 50% | 60% |
 | e5-base (dense) | 25% | 55% | 70% |
-| **hibrid e5-base + BM25s (RRF)** | 40% | **85%** | **90%** |
+| hibrid e5-base + BM25s (RRF) | 40% | 85% | 90% |
+| **gemini-embedding-001 (dense)** | **85%** | **95%** | **100%** |
+| hibrid gemini + BM25s (RRF) | 75% | 85% | 95% |
 
-  Embedding tək başına BM25-dən zəifdir, hibrid isə hər ikisindən yaxşıdır. Maddələri bəndlərə (688.1, 688.2…) bölmək kömək etmədi (hibrid hit@5 85%).
+  Lokal e5 tək başına BM25-dən zəifdir, ona görə onunla hibrid (RRF) işlənir. Gemini embedding isə tək başına ən yaxşısıdır, BM25 qoşmaq onu pisləşdirir. Ona görə deploy-da yalnız Gemini dense işləyir, BM25 isə API xəta verəndə ehtiyat kimi qalır. Maddələri bəndlərə (688.1, 688.2…) bölmək kömək etmədi.
+- **Embedding provayderi** (`EMBED_PROVIDER`): `gemini` (default, RAM-da model yoxdur → 512 MB pulsuz serverə sığır) və ya `local` (e5-base, ~1.5 GB RAM, oflayn). Hər vektor öz modelinin adını saxlayır (`law_articles.embed_model`). Model dəyişəndə köhnə vektorlar nəzərə alınmır və `scripts/ingest_law.py` (və ya `AUTO_INGEST_LAW=true`) yenidən embed edir.
 - **Uydurma istinada qarşı guardrail** (`analyzer.enforce_citations`): LLM yalnız promptdakı `<law>` blokunda olan maddələrə istinad edə bilər. Blokda olmayan istinad atılır və `invalid_refs` metrikasında sayılır (hədəf 0). İzahda adı çəkilən, blokda olan maddə isə avtomatik `law_refs`-ə əlavə olunur ki, istifadəçi mənbəni görsün.
 - Qanun cədvəli boşdursa və ya retrieval xəta verirsə, analiz istinadsız davam edir.
+
+## Deploy
+Render (pulsuz web service, `render.yaml`) + Neon (pulsuz PostgreSQL + pgvector). Addım-addım: [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ## Təhlükəsizlik
 Analiz ID-ləri təxmin edilə bilmir və tarixçə yalnız brauzerdə saxlanılır. Limitlər: IP başına saatda 5 analiz, servis üzrə gündə 15. Fayllar yoxlanılır, analizlər silinə bilər, 30 gündən sonra avtomatik silinir. Ətraflı təhdid modeli: [docs/SECURITY.md](docs/SECURITY.md).
