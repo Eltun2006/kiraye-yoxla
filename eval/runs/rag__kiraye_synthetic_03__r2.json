@@ -1,0 +1,238 @@
+{
+ "doc": "kiraye_synthetic_03.pdf",
+ "condition": "rag",
+ "provider": "gemini",
+ "embed_model": "gemini-embedding-001",
+ "created_at": "2026-10-26T17:15:33.222222+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 14881,
+  "output_tokens": 9353,
+  "cost_usd": null,
+  "latency_ms": 41635
+ },
+ "candidates": {
+  "1": [
+   "675",
+   "676",
+   "683",
+   "699",
+   "681"
+  ],
+  "2": [
+   "693",
+   "689",
+   "691",
+   "692",
+   "684"
+  ],
+  "3": [
+   "684",
+   "688",
+   "675",
+   "680",
+   "685"
+  ],
+  "4": [
+   "688",
+   "697",
+   "675",
+   "685",
+   "677"
+  ],
+  "5": [
+   "684",
+   "685",
+   "688",
+   "677",
+   "697"
+  ],
+  "6": [
+   "683",
+   "699",
+   "695",
+   "681",
+   "687"
+  ],
+  "7": [
+   "680",
+   "678",
+   "676",
+   "681",
+   "679"
+  ],
+  "8": [
+   "678",
+   "687",
+   "692",
+   "694",
+   "685"
+  ],
+  "9": [
+   "695",
+   "699",
+   "694",
+   "692",
+   "691"
+  ],
+  "10": [
+   "691",
+   "694",
+   "692",
+   "685",
+   "686"
+  ],
+  "11": [
+   "677",
+   "678",
+   "676",
+   "686",
+   "682"
+  ],
+  "12": [
+   "687",
+   "677",
+   "695",
+   "686",
+   "679"
+  ],
+  "13": [
+   "675",
+   "679",
+   "690",
+   "677",
+   "683"
+  ]
+ },
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu bənd kirayəyə verilən əmlakın təsvirini verir və standart bir şərtdir.",
+   "suggestion": "",
+   "law_refs": [
+    "675"
+   ]
+  },
+  {
+   "clause_index": 2,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Müqavilənin avtomatik uzadılması zamanı kirayə haqqının Ev sahibi tərəfindən birtərəfli şəkildə “bazar qiymətinə uyğun” müəyyənləşdirilməsi Kirayəçi üçün əlverişsizdir. Bu, kirayə haqqının gözlənilməz artımına səbəb ola bilər və Mülki Məcəllənin 692.8-ci maddəsinə görə Kirayəçinin ziyanına olan kənaraçıxmalar qüvvədə deyil.",
+   "suggestion": "Müqavilənin müddəti 11 (on bir) aydır. Müqavilənin müddəti bitməzdən ən azı 2 (iki) ay əvvəl tərəflərdən heç biri yazılı bildirişlə müqaviləyə xitam verməzsə, müqavilə əvvəlki şərtlərlə, eyni müddətə avtomatik olaraq uzadılmış hesab edilir. Kirayə haqqının artırılması yalnız tərəflərin qarşılıqlı razılığı ilə mümkündür.",
+   "law_refs": [
+    "689",
+    "691",
+    "692",
+    "693"
+   ]
+  },
+  {
+   "clause_index": 3,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Kirayə haqqının ABŞ dollarının məzənnəsinə bağlanması, məzənnə dəyişiklikləri səbəbindən aylıq ödənişlərinizin qeyri-müəyyən və gözlənilməz şəkildə artmasına səbəb ola bilər. Bu, Kirayəçi üçün böyük maliyyə riskidir.",
+   "suggestion": "Aylıq kirayə haqqı 800 (səkkiz yüz) manatdır və müqavilə müddəti ərzində dəyişməz qalır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin qaytarılmasının yalnız Ev sahibinin qərarından asılı olması sizin üçün risklidir. Bu, depozitin ədalətli şəkildə qaytarılmaması ehtimalını artırır və Kirayəçiyə heç bir etiraz hüququ vermir. Mülki Məcəllənin 688.2-ci maddəsinə görə, təminat bir aylıq kirayə haqqının iki mislindən çox olmamalıdır ki, bu bənddə bu məbləğə riayət edilsə də, qaytarılma mexanizmi qeyri-şəffafdır.",
+   "suggestion": "Kirayəçi 1600 (min altı yüz) manat depozit ödəyir. Müqaviləyə xitam verildikdən və mənzil təhvil verildikdən sonra, mənzildə Kirayəçinin təqsiri ucbatından yaranan zədələr istisna olmaqla, depozit tam həcmdə 7 (yeddi) iş günü ərzində Kirayəçiyə qaytarılır. Əgər zədələr aşkar edilərsə, onların aradan qaldırılması üçün tələb olunan məbləğ depozitdən tutulur, qalan hissə isə Kirayəçiyə qaytarılır. Bu halda Ev sahibi Kirayəçiyə zədələrin və təmir xərclərinin detallı siyahısını təqdim etməlidir.",
+   "law_refs": [
+    "688"
+   ]
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Bu cərimə şərti çox yüksəkdir və Kirayəçi üçün əlverişsizdir. Hər gecikmə günü üçün aylıq kirayə haqqının 1%-i miqdarında cərimə qanunvericiliyə ziddir. Mülki Məcəllənin 688.4-cü maddəsinə görə, yaşayış otağının kirayəsində kirayəçidən dəbbə pulu (cərimə) ödənilməsi barədə razılaşmanın qüvvəsi yoxdur.",
+   "suggestion": "Yaşayış otağının kirayəsi müqavilələrində dəbbə pulu (cərimə) tətbiq edilmir. Ödəniş gecikməsi halında tərəflər qanunvericiliklə müəyyən edilmiş qaydada məsuliyyət daşıyırlar.",
+   "law_refs": [
+    "688"
+   ]
+  },
+  {
+   "clause_index": 6,
+   "risk": "medium",
+   "category": "usage_rules",
+   "explanation": "Bu şərt ümumi qəbul edilsə də, Kirayəçinin mənzilin bir hissəsini başqasına kirayəyə vermək hüququ və Ev sahibinin əsaslı səbəb olmadan imtina edə bilməməsi məsələsi də aydınlaşdırılmalıdır. Mülki Məcəllənin 683.2-ci maddəsinə görə, Kirayəçinin əsaslı marağı olduqda və Ev sahibi imtina üçün mühüm əsaslar vermədikdə, bu icazəni almaq hüququ var.",
+   "suggestion": "Kirayəçi mənzili Ev sahibinin yazılı razılığı olmadan başqasına subkirayəyə verə bilməz. Lakin Kirayəçinin mənzilin bir hissəsini üçüncü şəxsə istifadəyə verməyə əsaslı marağı olduğu halda, Ev sahibi əsaslı səbəblər olmadan bu icazədən imtina edə bilməz, bu şərtlə ki, yaşayış otağı həddindən artıq yüklənməsin.",
+   "law_refs": [
+    "683"
+   ]
+  },
+  {
+   "clause_index": 7,
+   "risk": "medium",
+   "category": "repairs",
+   "explanation": "“Kiçik təmir” və “əsaslı təmir” anlayışları müqavilədə aydınlaşdırılmalıdır. Əks halda, hansı təmir işlərinin kimin öhdəsinə düşməsi ilə bağlı mübahisələr yarana bilər. Kirayəçi, Mülki Məcəllənin 682-ci maddəsinə əsasən, mənzilin müqavilə üzrə istifadəsi nəticəsində dəyişməsi və ya pisləşməsi üçün məsuliyyət daşımır.",
+   "suggestion": "Kiçik təmir işləri (məsələn, lampa dəyişdirilməsi, kiçik santexnika problemləri) Kirayəçinin hesabına, mənzildə Kirayəçinin təqsiri olmadan yaranan normal aşınma və ya qüsurlardan irəli gələn təmirlər, eləcə də əsaslı təmir işləri (məsələn, su və ya istilik sistemində ciddi problemlər, damın təmiri, divarların əsaslı təmiri) isə Ev sahibinin hesabına həyata keçirilir. Kirayəçi, Mülki Məcəllənin 680.1-ci maddəsinə əsasən, əşyanın saxlanması və ya bərpası üçün çəkdiyi zəruri xərclərin əvəzini Ev sahibindən tələb edə bilər.",
+   "law_refs": [
+    "676",
+    "680",
+    "682"
+   ]
+  },
+  {
+   "clause_index": 8,
+   "risk": "medium",
+   "category": "access_privacy",
+   "explanation": "Ev sahibinin mənzilə baxış keçirmə hüququ olsa da, 24 saatlıq bildiriş müddəti Kirayəçi üçün çox qısa ola bilər. Həmçinin, baxışlar qarşılıqlı razılaşdırılmış vaxtda aparılmalıdır ki, Kirayəçinin məxfiliyi və rahatlığı təmin edilsin. “Ayda bir dəfədən çox olmayaraq” ifadəsi də bəzən Kirayəçi üçün narahatlıq yarada bilər, əgər bunun üçün əsaslı səbəb yoxdursa.",
+   "suggestion": "Ev sahibi mənzilə baxış keçirmək istədikdə, Kirayəçiyə ən azı 3 (üç) iş günü əvvəl yazılı xəbərdarlıq etməli və baxışın vaxtı tərəflər arasında qarşılıqlı razılaşma ilə müəyyən edilməlidir. Təcili vəziyyətlər (məsələn, su sızması, yanğın təhlükəsi) istisna olmaqla, Ev sahibi Kirayəçinin razılığı olmadan mənzilə daxil ola bilməz.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu şərt qanunvericiliyə ziddir və Kirayəçi üçün çox risklidir. Mülki Məcəllənin 699.1-ci maddəsinə görə, mənzil satıldıqda yeni mülkiyyətçi köhnə Ev sahibini əvəz edir və kirayə müqaviləsi qüvvədə qalır. Həmçinin, 7 günlük boşaltma müddəti yaşayış otaqları üçün qanunla müəyyən edilmiş bildiriş müddətlərinə (Mülki Məcəllə 691.2) ziddir və Kirayəçinin hüquqlarını kobud şəkildə pozur. Mülki Məcəllənin 687-ci maddəsinə əsasən, qanunda nəzərdə tutulan əsaslardan savayı, müqaviləni ləğv etmək hüququ verən razılaşmanın qüvvəsi yoxdur.",
+   "suggestion": "Ev sahibi mənzili satdıqda, Mülki Məcəllənin 699.1-ci maddəsinə əsasən, yeni mülkiyyətçi kirayə müqaviləsinin bütün hüquq və öhdəliklərini öz üzərinə götürür və kirayə müqaviləsi əvvəlki şərtlərlə qüvvədə qalır. Kirayəçi satın almaqda üstünlük hüququna malikdir (Mülki Məcəllə 699.3-cü maddə). Yeni mülkiyyətçi müqaviləyə xitam vermək istəyərsə, Azərbaycan Respublikasının qanunvericiliyi ilə müəyyən edilmiş müddətlərə və əsaslara (məsələn, Mülki Məcəllə 691.2) riayət etməlidir.",
+   "law_refs": [
+    "687",
+    "691",
+    "699"
+   ]
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "termination",
+   "explanation": "Bu şərt Kirayəçi üçün əlverişlidir, çünki Mülki Məcəllənin 691.2-ci maddəsi yaşayış otaqları üçün müqaviləyə xitam verilməsi müddətini daha uzun müəyyən edir (növbəti aydan sonrakı ayın axırı üçün qüvvəyə minməklə təqvim ayının birinci iş günü). Bir ay əvvəl bildiriş vermək sizə daha çox çeviklik verir.",
+   "suggestion": "",
+   "law_refs": [
+    "691"
+   ]
+  },
+  {
+   "clause_index": 11,
+   "risk": "medium",
+   "category": "general",
+   "explanation": "Bu bənd müqavilənin avtomatlaşdırılmış sistemlər tərəfindən düzgün qiymətləndirilməsinin qarşısını almağa cəhddir. Bu, müqavilədə Kirayəçi üçün əlverişsiz başqa şərtlərin ola biləcəyinə işarə edir və bütün müqaviləyə xüsusi diqqətlə yanaşmağı tələb edir.",
+   "suggestion": "Bu cür manipulyativ bəndlər müqavilənin etibarlılığına və şəffaflığına şübhə yaradır. Tərəflər arasında etibarlı münasibətləri təmin etmək üçün bu bənd müqavilədən çıxarılmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, standart bir bənddir və müqavilədə qeyd olunmayan məsələlərin qanunvericiliklə tənzimlənəcəyini bildirir. Bu, Kirayəçinin hüquqlarını qoruyan müsbət bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, müqavilənin rəsmiyyətini təmin edən və hər iki tərəfin bir nüsxəyə sahib olmasını təmin edən standart bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 2
+}

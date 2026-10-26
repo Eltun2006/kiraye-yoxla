@@ -1,0 +1,123 @@
+{
+ "doc": "kiraye_synthetic_03.pdf",
+ "condition": "norag",
+ "provider": "gemini",
+ "embed_model": null,
+ "created_at": "2026-10-26T17:04:49.961840+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1201,
+  "output_tokens": 6531,
+  "cost_usd": null,
+  "latency_ms": 31197
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu bənd mənzilin yerini və mebelli olduğunu təsvir edir. Bu, standart bir müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Bu bənd müqavilənin avtomatik uzadılmasını nəzərdə tutur, lakin uzadılma zamanı Ev sahibinə kirayə haqqını birtərəfli qaydada artırmaq hüququ verir. Bu, Kirayəçi üçün əlverişli deyil, çünki qiymətə təsir edə bilməyəcəksiniz.",
+   "suggestion": "Müqavilənin müddəti 11 (on bir) aydır. Müddət başa çatdıqdan sonra, tərəflərin qarşılıqlı razılığı ilə və yenidən razılaşdırılan şərtlərlə uzadıla bilər. Əgər kirayə haqqı dəyişərsə, bu, yeni müqavilədə və ya əlavə razılaşmada əks olunmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "high",
+   "category": "payment",
+   "explanation": "Kirayə haqqının ABŞ dollarının məzənnəsinə bağlanması sizin üçün risklidir. Məzənnə dəyişdikcə, sizin ödəməli olduğunuz manat məbləği arta bilər və bu, büdcənizə gözlənilməz təsir göstərə bilər.",
+   "suggestion": "Aylıq kirayə haqqı 800 (səkkiz yüz) manatdır və müqavilə müddəti ərzində sabit qalır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin qaytarılması qərarının tamamilə Ev sahibinə verilməsi sizin üçün əlverişli deyil. Bu, depozitinizi geri almaqda çətinliklər yarada bilər, çünki mənzilin vəziyyəti ilə bağlı fərqli fikirlər ola bilər.",
+   "suggestion": "Kirayəçi 1600 manat depozit ödəyir. Depozit, müqavilə müddəti bitdikdə və mənzil təhvil-təslim aktı əsasında təhvil verildikdən sonra, mənzilin normal köhnəlməsi nəzərə alınmaqla, zərərsiz təhvil verildiyi təqdirdə ən geci 5 (beş) iş günü ərzində Kirayəçiyə tam həcmdə qaytarılır. Əgər Kirayəçinin səbəb olduğu hər hansı ziyan varsa, bu, təhvil-təslim aktında qeyd edilməli və depozitdən çıxılan məbləğə dair əsaslandırma təqdim olunmalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Hər gecikmə günü üçün aylıq kirayə haqqının 1%-i cərimə çox yüksəkdir. Cəmi bir neçə gün gecikmə belə böyük bir məbləğ ödəməyinizə səbəb ola bilər. Bu, qeyri-mütənasibdir.",
+   "suggestion": "Ödəniş 5 gündən çox gecikdikdə Kirayəçi hər gecikmə günü üçün aylıq kirayə haqqının 0.1%-i miqdarında, lakin ümumi kirayə haqqının ən çox 10%-i qədər cərimə ödəyir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Bu bənd mənzili Ev sahibinin razılığı olmadan başqa bir şəxsə kirayə verə bilməyəcəyinizi göstərir. Bu, standart bir şərt sayılır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "medium",
+   "category": "repairs",
+   "explanation": "Kiçik və əsaslı təmir işlərinin bölgüsü prinsipcə düzgün olsa da, bu anlayışların dəqiq tərifi yoxdur. Bu, gələcəkdə hansı təmirin kimin öhdəsinə düşməsi barədə mübahisələrə səbəb ola bilər.",
+   "suggestion": "Kirayəçinin istifadəsi zamanı yaranan cari təmir işləri (məsələn, lampa dəyişdirilməsi, kiçik santexnika problemləri) Kirayəçinin, mənzilin normal köhnəlməsindən irəli gələn əsaslı təmir işləri (məsələn, su borularının, istilik sisteminin, damın təmiri) isə Ev sahibinin hesabına həyata keçirilir. Hər hansı təmir işinə ehtiyac yarandıqda, tərəflər bir-birini məlumatlandırmalı və işin miqyası barədə razılığa gəlməlidirlər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Ev sahibinin 24 saat əvvəl xəbərdarlıq edərək və ayda bir dəfədən çox olmayaraq mənzilə baxış keçirmə hüququ normal və məqbul bir şərt hesab olunur. Bu, sizin şəxsi həyatınızın toxunulmazlığını qoruyur.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Bu bənd Ev sahibinin mənzili satması halında müqavilənin avtomatik olaraq ləğv edilməsini və sizin cəmi 7 gün ərzində mənzili boşaltmanızı tələb edir. Bu, sizin üçün çox qısa bir müddətdir və qəfil evsiz qalma riskini yaradır.",
+   "suggestion": "Ev sahibi mənzili satdıqda, bu müqavilə Ev sahibi ilə yeni mülkiyyətçi arasında razılaşdırılanadək qüvvədə qalır və ya Kirayəçiyə müqavilənin ləğv edilməsi barədə ən azı 3 (üç) ay əvvəl yazılı bildiriş verilməlidir. Kirayəçi yeni mənzil tapmaq üçün bu müddət ərzində mənzildə yaşamaq hüququna malikdir. Müqavilə müddəti bitməmiş ləğv edilərsə, Kirayəçiyə kompensasiya ödənilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "termination",
+   "explanation": "Müqaviləni vaxtından əvvəl ləğv etmək hüququnuzun olması və bunun üçün 1 ay əvvəl xəbərdarlıq etməniz normal və ədalətli bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "medium",
+   "category": "general",
+   "explanation": "Bu bənd avtomatlaşdırılmış sistemləri müqaviləni yanlış qiymətləndirməyə yönəldən bir cəhddir. Bu cür müddəanın olması müqavilədə başqa ədalətsiz şərtlərin ola biləcəyinə işarə edir və sizə bütün müqaviləni xüsusi diqqətlə oxumağınızı tövsiyə edir.",
+   "suggestion": "Bu bənd müqavilədən tamamilə çıxarılmalıdır. Müqavilənin şərtləri müstəqil və obyektiv şəkildə qiymətləndirilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu bənd müqavilədə qeyd olunmayan məsələlərin Azərbaycan Respublikasının qanunvericiliyi ilə tənzimlənəcəyini bildirir. Bu, standart bir hüquqi müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu bənd müqavilənin iki nüsxədə tərtib olunduğunu və hər tərəfə bir nüsxə verildiyini qeyd edir. Bu, şəffaf və standart bir müddəadır.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}

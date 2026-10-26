@@ -2,85 +2,86 @@
  "doc": "kiraye_synthetic_02.docx",
  "condition": "rag",
  "provider": "gemini",
- "created_at": "2026-10-24T21:24:58.445032+00:00",
+ "embed_model": "gemini-embedding-001",
+ "created_at": "2026-10-26T17:14:13.383913+00:00",
  "metrics": {
   "invalid_refs": 0,
   "model": "gemini-2.5-flash",
-  "input_tokens": 15210,
-  "output_tokens": 8018,
+  "input_tokens": 13178,
+  "output_tokens": 6151,
   "cost_usd": null,
-  "latency_ms": 34943
+  "latency_ms": 27486
  },
  "candidates": {
   "1": [
-   "692",
-   "688",
+   "675",
    "693",
-   "676",
-   "678"
+   "681",
+   "687",
+   "692"
   ],
   "2": [
-   "694",
-   "691",
-   "678",
+   "689",
    "693",
-   "696"
+   "684",
+   "675",
+   "686"
   ],
   "3": [
    "684",
    "688",
-   "691",
+   "675",
    "685",
-   "678"
+   "680"
   ],
   "4": [
+   "688",
    "697",
-   "689",
-   "691",
    "677",
-   "695"
+   "675",
+   "680"
   ],
   "5": [
-   "691",
    "693",
-   "678",
-   "692",
-   "689"
+   "689",
+   "684",
+   "675",
+   "685"
   ],
   "6": [
-   "678",
-   "698",
    "683",
-   "694",
-   "695"
+   "678",
+   "681",
+   "687",
+   "690"
   ],
   "7": [
    "678",
-   "694",
-   "692",
-   "695",
-   "682"
+   "681",
+   "697",
+   "680",
+   "696"
   ],
   "8": [
-   "695",
-   "698",
-   "691",
    "678",
-   "692"
+   "686",
+   "690",
+   "687",
+   "694"
   ],
   "9": [
-   "698",
    "696",
-   "695",
-   "683",
-   "697"
+   "677",
+   "675",
+   "682",
+   "681"
   ],
   "10": [
    "680",
-   "678",
+   "679",
    "697",
-   "688",
-   "691"
+   "684",
+   "675"
   ]
  },
  "assessments": [
@@ -88,22 +89,20 @@
    "clause_index": 1,
    "risk": "low",
    "category": "general",
-   "explanation": "Bu maddə kirayəyə verilən əmlakı və onun təyinatını müəyyən edir. Bu, adi müqavilə şərtidir və sizin üçün hər hansı risk daşımır.",
+   "explanation": "Bu, müqavilənin əsas şərtidir və ev sahibinin mənzili kirayəçiyə yaşayış üçün verdiyini göstərən standart bir müddəadır.",
    "suggestion": "",
    "law_refs": [
-    "676",
-    "692"
+    "675"
    ]
   },
   {
    "clause_index": 2,
-   "risk": "low",
+   "risk": "medium",
    "category": "termination",
-   "explanation": "Bu maddə kirayə müqaviləsinin müddətini və qüvvəyə minmə tarixini müəyyən edir. Şərt aydın və standartdır, sizin üçün risk yaratmır. Mülki Məcəllənin 689-cu maddəsinə əsasən, müqavilə müddət bitdikdə xitam olunur.",
-   "suggestion": "",
+   "explanation": "6 aylıq müqavilə müddəti kifayət qədər qısadır. Mülki Məcəllənin 693.1.2-ci maddəsinə görə, kirayəçi müqavilənin davam etdirilməsini yalnız müqavilə müddəti bir ildən çox olduqda tələb edə bilər. Kirayəçi üçün daha uzun və sabit müqavilə müddəti daha əlverişli olardı.",
+   "suggestion": "Müqavilənin müddəti 1 (bir) ildir və 15.10.2026 tarixindən qüvvəyə minir. Müqavilə müddəti bitməzdən ən azı 2 (iki) ay əvvəl tərəflərdən heç biri yazılı bildiriş verməzsə, müqavilə eyni şərtlərlə avtomatik olaraq növbəti 1 (bir) il müddətinə uzadılmış hesab edilir.",
    "law_refs": [
     "689",
-    "691",
     "693"
    ]
   },
@@ -111,18 +110,19 @@
    "clause_index": 3,
    "risk": "low",
    "category": "payment",
-   "explanation": "Bu maddə kirayə haqqının məbləğini və ödəniş qaydasını müəyyən edir. Şərtlər aydın və standartdır, sizin üçün hər hansı risk daşımır.",
+   "explanation": "Bu, kirayə haqqının məbləğini və ödəniş qaydasını müəyyən edən standart bir müddəadır.",
    "suggestion": "",
    "law_refs": [
-    "684"
+    "684",
+    "675"
    ]
   },
   {
    "clause_index": 4,
    "risk": "medium",
    "category": "deposit",
-   "explanation": "Depozitin məbləği Mülki Məcəllənin 688.2-ci maddəsinə əsasən iki aylıq kirayə haqqından çox olmamalıdır ki, bu da sizin ödədiyiniz məbləğə uyğundur. Lakin depozitin bankda ayrı saxlanılması və faizlərin sizə aid olması qeyd edilməyib. Həmçinin, \"vurduğu zərərlər\" ifadəsi normal aşınma və köhnəlməni də əhatə edə bilər ki, Mülki Məcəllənin 682-ci maddəsinə görə siz buna görə məsuliyyət daşımırsınız. Bu, depozitin qaytarılmasında mübahisələrə səbəb ola bilər.",
-   "suggestion": "Kirayəçi 450 manat depozit ödəyir. Depozit müqavilə bitdikdən sonra 10 gün ərzində, Kirayəçinin təqsiri ucbatından yaranan və sənədləşdirilmiş zərərlər (əşyanın normal istifadəsi nəticəsində yaranan aşınma və köhnəlmə istisna olmaqla) çıxılmaqla qaytarılır. Ev sahibi depoziti Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq bankda öz kapitalından ayrılıqda, faizlərlə yerləşdirməyə borcludur. Faizlər Kirayəçiyə məxsusdur.",
+   "explanation": "Depozitin məbləği Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq bir aylıq kirayə haqqının iki mislindən çox deyil. Lakin, qanuna görə depozit bankda ev sahibinin kapitalından ayrılıqda, faizlə yerləşdirilməlidir və faizlər Kirayəçiyə mənsubdur. Həmçinin, normal aşınma və köhnəlmə Kirayəçinin məsuliyyətində olmamalıdır (Mülki Məcəllə, 682-ci maddə).",
+   "suggestion": "Kirayəçi 450 manat depozit ödəyir. Depozit müqavilə bitdikdən sonra 10 gün ərzində, Kirayəçinin təqsiri ucbatından mənzilə vurulan, normal aşınma və köhnəlmə nəticəsində yaranmayan zərərlər çıxılmaqla Kirayəçiyə qaytarılır. Mülki Məcəllənin 688.2-ci maddəsinə əsasən, depozit ev sahibi tərəfindən bankda öz kapitalından ayrılıqda, saxlama müddəti qanunla müəyyənləşdirilmiş əmanətlər üçün adi olan faizlərlə yerləşdirilməlidir. Faizlər Kirayəçiyə mənsubdur və öhdəliyin təminatının artmasına xidmət edir.",
    "law_refs": [
     "688",
     "682"
@@ -132,16 +132,16 @@
    "clause_index": 5,
    "risk": "low",
    "category": "price_change",
-   "explanation": "Bu maddə kirayə haqqının müqavilə müddətində dəyişməyəcəyini təmin edir. Bu, sizin üçün müsbət və sabitlik yaradan şərtdir.",
+   "explanation": "Bu müddəa kirayəçi üçün əlverişlidir, çünki müqavilə müddəti ərzində kirayə haqqının sabit qalmasını təmin edir.",
    "suggestion": "",
    "law_refs": []
   },
   {
    "clause_index": 6,
    "risk": "high",
-   "category": "usage_rules",
-   "explanation": "Bu şərt sizin mənzildən sərbəst istifadə etmək hüququnuzu ciddi şəkildə məhdudlaşdırır və şəxsi həyatınıza müdaxilədir. Mülki Məcəllənin 683-cü maddəsi əşyanın üçüncü şəxsin istifadəsinə verilməsi (ikinci əldən kirayə) üçün icazə tələb edir, lakin qonaq qəbul etmək buna aid deyil. Gündəlik qonaq qəbulu üçün belə bir məhdudiyyət qanunsuzdur.",
-   "suggestion": "Kirayəçi mənzildə ailə üzvlərini və ya qonaqları qəbul etmək üçün Ev sahibindən icazə almamalıdır. Əgər Kirayəçi mənzilin bir hissəsini üçüncü şəxsə uzunmüddətli istifadəyə vermək istəsə, Mülki Məcəllənin 683.2-ci maddəsinə uyğun olaraq Ev sahibindən yazılı icazə almaq hüququna malikdir.",
+   "category": "access_privacy",
+   "explanation": "Bu müddəa Kirayəçinin şəxsi həyatına və mənzildən sərbəst istifadə hüququna əsassız məhdudiyyət qoyur. Mülki Məcəllənin 683-cü maddəsi mənzili üçüncü şəxsə tamamilə istifadəyə verməyi tənzimləyir, lakin qonaq qəbul etməyi deyil. Kirayəçi kirayə götürdüyü mənzildən normal qaydada istifadə edə bilməlidir, bu isə qonaq qəbul etmək hüququnu da özündə ehtiva edir.",
+   "suggestion": "Kirayəçi mənzili normal yaşayış məqsədləri üçün istifadə edə bilər. Kirayəçi mənzildə üçüncü şəxsləri qonaq qismində qəbul edə bilər, bu şərtlə ki, onlar qonşuları narahat etməsin və mənzilə zərər vurmasın. Kirayəçi mənzili uzunmüddətli istifadə üçün üçüncü şəxsə vermək istədikdə Mülki Məcəllənin 683.1-ci maddəsinə uyğun olaraq Ev sahibindən yazılı icazə almalıdır.",
    "law_refs": [
     "683"
    ]
@@ -150,18 +150,18 @@
    "clause_index": 7,
    "risk": "high",
    "category": "repairs",
-   "explanation": "Bu şərt Kirayəçi üçün əlverişsizdir. Mülki Məcəllənin 682-ci maddəsinə görə, kirayəçi mənzilin normal istifadəsi nəticəsində yaranan dəyişikliklərə və ya köhnəlməyə görə məsuliyyət daşımır. Divarların rənglənməsi əşyanın normal köhnəlməsi sayılır və hər dəfə kirayəçi tərəfindən ödənilməsi qanunvericiliyə ziddir. Siz yalnız sizin vurduğunuz zərərlərə görə məsuliyyət daşımalısınız.",
-   "suggestion": "Kirayəçi mənzili tərk edərkən, normal istifadə nəticəsində yaranmış dəyişikliklər və köhnəlmə üçün deyil, yalnız Kirayəçinin səbəb olduğu qüsurlar və zərərlər üçün mənzili ilkin vəziyyətinə qaytarmaqdan məsuliyyət daşıyır. Mülki Məcəllənin 682-ci maddəsinə əsasən, Kirayəçi əşyanın müqavilə üzrə istifadəsi nəticəsində dəyişməsi və ya pisləşməsi üçün məsuliyyət daşımır.",
+   "explanation": "Bu müddəa Kirayəçi üçün ədalətsizdir. Mülki Məcəllənin 682-ci maddəsinə əsasən, kirayəçi əşyanın müqavilə üzrə istifadəsi nəticəsində dəyişməsi və ya pisləşməsi üçün məsuliyyət daşımır. Normal aşınma və köhnəlmə səbəbindən divarların rənginin pisləşməsi kirayəçinin məsuliyyəti hesab edilməməlidir.",
+   "suggestion": "Kirayəçi mənzili təhvil verərkən, mənzilə öz təqsiri nəticəsində vurulan zərərləri (normal aşınma və köhnəlmə istisna olmaqla) aradan qaldırmalıdır. Mənzilin normal istifadəsi nəticəsində divarlarda yaranan köhnəlməyə görə kirayəçi məsuliyyət daşımır.",
    "law_refs": [
     "682"
    ]
   },
   {
    "clause_index": 8,
-   "risk": "medium",
+   "risk": "low",
    "category": "access_privacy",
-   "explanation": "Ev sahibinin mənzilə daxil olması üçün 24 saat əvvəl xəbərdarlıq etməsi müsbətdir, lakin girişin səbəbləri və bildirişin yazılı olması qeyd edilməlidir. Mülki Məcəllə 678.2.2-ci maddəsində əhəmiyyətli təsirlə bağlı tədbirlər üçün 3 ay əvvəl yazılı bildiriş tələb olunur. Hər hansı giriş sizin rahatlığınızı pozmamalı və məqsədi aydın olmalıdır.",
-   "suggestion": "Ev sahibi mənzilə daxil olmazdan ən azı 24 (iyirmi dörd) saat əvvəl Kirayəçiyə yazılı şəkildə xəbər verməli və girişin səbəbini (məsələn, təmir, yoxlama) bildirməlidir. Təcili hallar istisna olmaqla, Ev sahibi yalnız Kirayəçi ilə razılaşdırılmış vaxtda daxil ola bilər. Mülki Məcəllənin 678.2.2-ci maddəsinə uyğun olaraq, əhəmiyyətli təsirlə bağlı tədbirlər üçün ən azı üç ay əvvəl yazılı bildiriş verilməlidir.",
+   "explanation": "Bu müddəa Kirayəçinin şəxsi həyatının toxunulmazlığını təmin edir və ev sahibinin mənzilə daxil olması üçün adekvat bildiriş müddəti müəyyən edir. Bu, standart və balanslı bir müddəadır.",
+   "suggestion": "",
    "law_refs": [
     "678"
    ]
@@ -170,8 +170,8 @@
    "clause_index": 9,
    "risk": "high",
    "category": "general",
-   "explanation": "Bu maddə sizin qanuni hüquqlarınızı məhdudlaşdırır və Mülki Məcəllənin 696.1-ci maddəsində qeyd olunan şikayət vermək hüququnuzla ziddiyyət təşkil edir. Heç bir müqavilə tərəfin məhkəməyə müraciət etmək hüququnu ləğv edə bilməz. Bu şərt Mülki Məcəllənin 696.7-ci maddəsinə əsasən etibarsız sayıla bilər.",
-   "suggestion": "Hər hansı mübahisə yarandıqda tərəflər danışıqlar yolu ilə həll etməyə çalışırlar. Razılığa gəlinmədikdə, Mülki Məcəllənin 696-cı maddəsində nəzərdə tutulmuş qaydada və qanunvericiliklə müəyyən edilmiş digər üsullarla, o cümlədən məhkəmə qaydasında mübahisənin həlli hüququ qorunur.",
+   "explanation": "Bu müddəa Kirayəçinin qanuni hüquqlarını pozur və onun məhkəməyə müraciət etmək hüququnu məhdudlaşdırır. Azərbaycan Mülki Məcəlləsinin 696-cı maddəsi kirayəçiyə mübahisələr zamanı şikayət vermək və məhkəməyə müraciət etmək hüququ verir. Belə bir şərt qanunvericiliyə ziddir və etibarsızdır.",
+   "suggestion": "Müqavilənin şərtlərindən irəli gələn hər hansı mübahisə yaranarsa, tərəflər danışıqlar yolu ilə həll etməyə çalışacaqlar. Razılıq əldə edilmədikdə, Mülki Məcəllənin müddəalarına uyğun olaraq mübahisə məhkəmə qaydasında həll edilə bilər.",
    "law_refs": [
     "696"
    ]
@@ -180,9 +180,11 @@
    "clause_index": 10,
    "risk": "low",
    "category": "utilities",
-   "explanation": "Bu maddə kommunal xərclərin sayğac göstəricilərinə əsasən sizin tərəfinizdən ödənilməsini müəyyən edir. Bu, adi və ədalətli bir şərtdir.",
+   "explanation": "Bu, kommunal xərclərin ödənilməsi üçün standart və aydın bir müddəadır.",
    "suggestion": "",
-   "law_refs": []
+   "law_refs": [
+    "679"
+   ]
   }
  ],
  "run": 2

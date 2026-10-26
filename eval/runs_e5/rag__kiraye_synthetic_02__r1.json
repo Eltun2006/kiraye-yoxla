@@ -1,0 +1,184 @@
+{
+ "doc": "kiraye_synthetic_02.docx",
+ "condition": "rag",
+ "provider": "gemini",
+ "created_at": "2026-10-24T21:20:35.639219+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 15210,
+  "output_tokens": 6737,
+  "cost_usd": null,
+  "latency_ms": 30960
+ },
+ "candidates": {
+  "1": [
+   "692",
+   "688",
+   "693",
+   "676",
+   "678"
+  ],
+  "2": [
+   "694",
+   "691",
+   "678",
+   "693",
+   "696"
+  ],
+  "3": [
+   "684",
+   "688",
+   "691",
+   "685",
+   "678"
+  ],
+  "4": [
+   "697",
+   "689",
+   "691",
+   "677",
+   "695"
+  ],
+  "5": [
+   "691",
+   "693",
+   "678",
+   "692",
+   "689"
+  ],
+  "6": [
+   "678",
+   "698",
+   "683",
+   "694",
+   "695"
+  ],
+  "7": [
+   "678",
+   "694",
+   "692",
+   "695",
+   "682"
+  ],
+  "8": [
+   "695",
+   "698",
+   "691",
+   "678",
+   "692"
+  ],
+  "9": [
+   "698",
+   "696",
+   "695",
+   "683",
+   "697"
+  ],
+  "10": [
+   "680",
+   "678",
+   "697",
+   "688",
+   "691"
+  ]
+ },
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin ünvanı və təyinatı qeyd olunur. Bu, müqavilənin əsas şərtlərindən biridir və normaldır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin müddəti və qüvvəyə minmə tarixi göstərilir. Bu, həm kirayəçi, həm də ev sahibi üçün vacib məlumatdır və Mülki Məcəllənin 689.1-ci maddəsinə uyğundur.",
+   "suggestion": "",
+   "law_refs": [
+    "689"
+   ]
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Aylıq kirayə haqqı və ödəniş qaydası aydın şəkildə göstərilir. Bu, əsas maliyyə şərtidir və Mülki Məcəllənin 684.1-ci maddəsinə uyğun olaraq ödəniş müddəti təyin edilmişdir.",
+   "suggestion": "",
+   "law_refs": [
+    "684"
+   ]
+  },
+  {
+   "clause_index": 4,
+   "risk": "medium",
+   "category": "deposit",
+   "explanation": "Depozitin məbləği Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq iki aylıq kirayə haqqından çox deyil, bu müsbətdir. Lakin depozitin saxlanma şərtləri (ayrı bank hesabında, faizlə) və hansı zərərlərin çıxılacağı dəqiqləşdirilməyib. Kirayəçi normal aşınma və köhnəlmə üçün deyil, yalnız öz təqsiri nəticəsində vurduğu zərərlərə görə məsuliyyət daşıyır (Mülki Məcəllə 682).",
+   "suggestion": "Kirayəçi 450 (dörd yüz əlli) manat depozit ödəyir. Ev sahibi bu məbləği Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq öz kapitalından ayrılıqda, qanunla müəyyənləşdirilmiş faizlərlə bankda yerləşdirməlidir. Depozit müqavilə bitdikdən sonra 10 gün ərzində, Kirayəçinin təqsiri ucbatından mənzilə vurduğu və normal aşınma və köhnəlmə hesab edilməyən real zərərlərin dəyəri çıxılmaqla geri qaytarılır. Zərərlərin qiymətləndirilməsi Ev sahibi və Kirayəçi tərəfindən birgə aktla rəsmiləşdirilir.",
+   "law_refs": [
+    "688",
+    "682"
+   ]
+  },
+  {
+   "clause_index": 5,
+   "risk": "low",
+   "category": "price_change",
+   "explanation": "Bu maddə kirayə haqqının müqavilə müddəti ərzində sabit qalacağını təmin edir, bu da kirayəçi üçün əlverişlidir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "usage_rules",
+   "explanation": "Bu maddə kirayəçinin mənzildən normal istifadə hüququnu ciddi şəkildə məhdudlaşdırır və şəxsi həyatına müdaxilə edir. Kirayəçi qonaq qəbul etmək üçün hər dəfə icazə almağa borclu deyil. Mülki Məcəllənin 683.2-ci maddəsinə görə, kirayəçi mənzilin bir hissəsini üçüncü şəxsə vermək üçün ev sahibinin icazəsini tələb edə bilər, lakin bu, adi qonaq qəbul etməyə aid deyil.",
+   "suggestion": "Kirayəçi mənzildən normal yaşayış məqsədləri üçün istifadə etmək hüququna malikdir. Mənzili üçüncü şəxsin daimi istifadəsinə vermək (subkirayə) niyyətində olduqda, Kirayəçi Ev sahibindən yazılı icazə almalıdır. Qonaq qəbul etmək üçün əlavə icazə tələb olunmur.",
+   "law_refs": [
+    "683"
+   ]
+  },
+  {
+   "clause_index": 7,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Bu maddə kirayəçini normal aşınma və köhnəlmədən irəli gələn təmir xərclərinə görə məsuliyyət daşımağa məcbur edir. Mülki Məcəllənin 682-ci maddəsinə əsasən, kirayəçi mənzilin normal istifadəsi nəticəsində yaranan dəyişikliklərə və ya pisləşmələrə görə məsuliyyət daşımır. Divarların rənglənməsi vaxtaşırı edilməli olan kosmetik təmirdir.",
+   "suggestion": "Müqaviləyə xitam verildikdə Kirayəçi mənzili aldığında olduğu kimi, normal aşınma və köhnəlmə nəzərə alınmaqla qaytarmalıdır. Kirayəçi mənzilin divarlarını yalnız öz təqsiri ucbatından yaranan ciddi zərərlər olduğu təqdirdə Ev sahibinin hesabına təmir etməli və ya yenidən rəngləməlidir. Normal aşınma və köhnəlmə nəticəsində divarların rənglənməsi Ev sahibinin öhdəliyidir.",
+   "law_refs": [
+    "682"
+   ]
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Bu maddə Ev sahibinin mənzilə daxil olması üçün minimum bildiriş müddətini müəyyən edir, bu da kirayəçinin şəxsi həyatının toxunulmazlığını qorumaq üçün vacibdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "general",
+   "explanation": "Bu maddə kirayəçinin fundamental hüquqlarını pozur. Kirayəçi hər hansı mübahisə yarandığı zaman məhkəməyə müraciət etmək hüququna malikdir və bu hüquq müqavilə ilə məhdudlaşdırıla bilməz. Mülki Məcəllədə kirayəçinin ziyanına olan kənaraçıxmaların qüvvəsi yoxdur (məsələn, 677.1.4, 688.3, 688.4, 692.8).",
+   "suggestion": "Müqavilə şərtlərinin pozulması və ya tərəflər arasında yaranan digər mübahisələr danışıqlar yolu ilə həll olunmadıqda, Azərbaycan Respublikasının qanunvericiliyinə uyğun olaraq məhkəmə qaydasında həll edilir.",
+   "law_refs": [
+    "677",
+    "688",
+    "692"
+   ]
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "utilities",
+   "explanation": "Kommunal xərclərin sayğac göstəricilərinə əsasən kirayəçi tərəfindən ödənilməsi normal və ədalətli bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}

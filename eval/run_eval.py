@@ -58,18 +58,21 @@ def main() -> None:
     conditions = args.conditions.split(",")
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
-    ctx_by_doc = {}
+    clauses_by_doc, ctx_by_doc = {}, {}
     for doc in eval_docs():
-        _, clauses = split_clauses(extract_text(doc, (SAMPLES / doc).read_bytes()))
+        _, clauses_by_doc[doc] = split_clauses(extract_text(doc, (SAMPLES / doc).read_bytes()))
         if "rag" in conditions:
             from backend.db import SessionLocal
             from backend.retrieval import build_context
 
             with SessionLocal() as db:
-                ctx_by_doc[doc] = build_context(db, clauses)
+                ctx_by_doc[doc] = build_context(db, clauses_by_doc[doc])
             if ctx_by_doc[doc] is None:
                 raise SystemExit("Qanun cədvəli boşdur — əvvəlcə scripts/ingest_law.py işlədin.")
-        for run in range(1, args.runs + 1):
+    # Run-major order: run 1 of every contract first. If the daily quota stops us, every method has still
+    # seen every contract, and metrics.py can compare them on the common runs.
+    for run in range(1, args.runs + 1):
+        for doc, clauses in clauses_by_doc.items():
             for cond in conditions:
                 out = RUNS_DIR / f"{cond}__{Path(doc).stem}__r{run}.json"
                 if out.exists():

@@ -1,0 +1,115 @@
+{
+ "doc": "kiraye_synthetic_05.txt",
+ "condition": "norag",
+ "provider": "gemini",
+ "embed_model": null,
+ "created_at": "2026-10-26T17:12:01.666535+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1159,
+  "output_tokens": 5668,
+  "cost_usd": null,
+  "latency_ms": 25037
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin yerini və istifadə məqsədini müəyyən edən standart bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Müqavilənin avtomatik uzadılması və kirayə haqqının 15% artırılması Kirayəçi üçün əlverişli deyil. Kirayəçi müqaviləni bitirmək istəsə belə, bildiriş verməyi unudarsa, yüksək qiymətlə yeni müddətə məcbur qala bilər.",
+   "suggestion": "Müqavilənin müddəti 12 (on iki) aydır. Müddət bitdikdə, tərəflər yazılı razılaşma ilə müqaviləni yeniləyə bilərlər. Yeni kirayə haqqı tərəflərin qarşılıqlı razılığı ilə müəyyən edilir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "high",
+   "category": "payment",
+   "explanation": "Nağd ödənişlər üçün qəbz verilməməsi Kirayəçi üçün yüksək risk yaradır. Ödəniş etdiyinizi sübut edə bilməyəcəyiniz üçün gələcəkdə ödənişlə bağlı problemlər yarana bilər.",
+   "suggestion": "Aylıq kirayə haqqı 500 (beş yüz) manatdır və bank köçürməsi yolu ilə ödənilir. Nağd ödəniş edildikdə, Ev sahibi hər ödəniş üçün Kirayəçiyə qəbz təqdim etməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "medium",
+   "category": "deposit",
+   "explanation": "3 aylıq kirayə haqqı məbləğində təminat ödənişi adətən yüksək hesab olunur. Bu, sizin üçün əhəmiyyətli bir maliyyə yükü yaradır və mənzildən çıxdıqda geri qaytarılmasında problemlər yarana bilər.",
+   "suggestion": "Kirayəçi 1 (bir) aylıq kirayə haqqı məbləğində, yəni 500 manat təminat ödəyir. Təminat məbləği müqavilə müddəti bitdikdə və mənzil təhvil verildikdə, zərərsiz halda Kirayəçiyə tam geri qaytarılır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "utilities",
+   "explanation": "Ev sahibinin ümumi xərclər üçün sabit məbləği birtərəfli qaydada dəyişdirmək hüququ Kirayəçi üçün yüksək risklidir. Bu, gözlənilməz xərc artımlarına səbəb ola bilər.",
+   "suggestion": "Kirayəçi kommunal xidmətlərə əlavə olaraq, binanın ümumi xərcləri üçün hər ay sabit 80 manat ödəyir. Bu məbləğdə hər hansı dəyişiklik yalnız hər iki tərəfin yazılı razılığı ilə və dəyişikliyin əsaslandırılması təqdim edildikdən sonra edilə bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Bu bənd Ev sahibinə, kirayə haqqı gecikdikdə, sizin əşyalarınızı saxlamaq hüququ verir ki, bu da qanunsuz ola bilər və sizin üçün yüksək risk yaradır. Bu halda şəxsi əşyalarınızı itirmək riskiniz var.",
+   "suggestion": "Kirayəçi kirayə haqqını vaxtında ödəmədikdə, Ev sahibi yazılı bildiriş göndərərək borcun ödənilməsini tələb edə bilər. Əgər borc bildirişdə göstərilən müddətdə ödənilməzsə, Ev sahibi müqaviləni ləğv etmək üçün qanuni yollara müraciət edə bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "medium",
+   "category": "usage_rules",
+   "explanation": "Kirayəçinin mənzildə qeydiyyata düşə bilməməsi, rəsmi sənədlər, bank əməliyyatları və digər xidmətlərdən istifadə zamanı çətinliklər yarada bilər.",
+   "suggestion": "Kirayəçi mənzildə müvəqqəti qeydiyyata düşmək üçün Ev sahibindən yazılı razılıq istəyə bilər, hansı ki, bu razılıq ağlabatan səbəb olmadan rədd edilməməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "medium",
+   "category": "general",
+   "explanation": "Müqavilənin notarial təsdiqi xərclərinin tamamilə Kirayəçinin üzərinə qoyulması sizin üçün əlavə maliyyə yükü yaradır. Adətən bu xərclər tərəflər arasında bölünür.",
+   "suggestion": "Müqavilənin notarial təsdiqi ilə bağlı xərclər tərəflər arasında bərabər bölünür.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Ev sahibinin ailə üzvlərinin ehtiyacı səbəbilə müqaviləni cəmi 1 aylıq bildirişlə ləğv etmək hüququ Kirayəçi üçün yüksək risk daşıyır. Bu halda siz qısa müddətdə yeni yaşayış yeri tapmaq məcburiyyətində qala bilərsiniz.",
+   "suggestion": "Müqavilə müddətindən əvvəl Ev sahibi tərəfindən ləğv edildikdə, Kirayəçiyə ən azı 3 (üç) ay əvvəl yazılı bildiriş verilməli və Ev sahibi Kirayəçinin yeni yaşayış yeri tapması üçün ağlabatan yardım göstərməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "repairs",
+   "explanation": "Bu, mülkiyyətin qorunması üçün standart bir bənddir və Ev sahibinin icazəsi olmadan mənzildə əsaslı dəyişikliklər etməməyinizi tələb edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Mebel və məişət texnikasının normal köhnəlməsi nəticəsində yaranan nasazlıqların Kirayəçinin hesabına təmir edilməsi sizin üçün ədalətsizdir. Normal köhnəlmə Ev sahibinin məsuliyyətində olmalıdır.",
+   "suggestion": "Mebel və məişət texnikasının normal köhnəlməsi nəticəsində yaranan nasazlıqların təmiri Ev sahibinin hesabına həyata keçirilir. Kirayəçinin səhlənkarlığı və ya qəsdən vurduğu ziyan istisnadır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, müqavilənin tərtib olunması və nüsxələrin tərəflərə verilməsi ilə bağlı standart inzibati bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}

@@ -1,0 +1,237 @@
+{
+ "doc": "kiraye_synthetic_04.txt",
+ "condition": "rag",
+ "provider": "gemini",
+ "embed_model": "gemini-embedding-001",
+ "created_at": "2026-10-26T17:11:28.627747+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 16136,
+  "output_tokens": 9857,
+  "cost_usd": null,
+  "latency_ms": 44207
+ },
+ "candidates": {
+  "1": [
+   "675",
+   "678",
+   "676",
+   "683",
+   "693"
+  ],
+  "2": [
+   "693",
+   "689",
+   "691",
+   "692",
+   "696"
+  ],
+  "3": [
+   "684",
+   "675",
+   "685",
+   "680",
+   "688"
+  ],
+  "4": [
+   "693",
+   "689",
+   "696",
+   "692",
+   "684"
+  ],
+  "5": [
+   "688",
+   "697",
+   "677",
+   "680",
+   "675"
+  ],
+  "6": [
+   "685",
+   "686",
+   "696",
+   "691",
+   "684"
+  ],
+  "7": [
+   "678",
+   "680",
+   "682",
+   "676",
+   "677"
+  ],
+  "8": [
+   "678",
+   "687",
+   "692",
+   "686",
+   "685"
+  ],
+  "9": [
+   "683",
+   "699",
+   "695",
+   "681",
+   "687"
+  ],
+  "10": [
+   "691",
+   "689",
+   "686",
+   "690",
+   "694"
+  ],
+  "11": [
+   "681",
+   "696",
+   "677",
+   "683",
+   "685"
+  ],
+  "12": [
+   "687",
+   "681",
+   "694",
+   "692",
+   "678"
+  ],
+  "13": [
+   "696",
+   "677",
+   "685",
+   "695",
+   "687"
+  ]
+ },
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə kirayəyə verilən mənzili və onun təyinatını (yaşayış məqsədilə) müəyyən edir. Bu, Mülki Məcəllənin 675-ci maddəsinə uyğun standart bir müddəadır.",
+   "suggestion": "",
+   "law_refs": [
+    "675"
+   ]
+  },
+  {
+   "clause_index": 2,
+   "risk": "medium",
+   "category": "termination",
+   "explanation": "Müqavilənin müddətinin 12 ay olması normaldır. Lakin Mülki Məcəllənin 693.2.1-ci maddəsinə görə, əgər müddət bitdikdən sonra kirayəçi otaqdan istifadəni davam etdirirsə və iki həftə ərzində tərəflərdən heç biri əksini bildirmirsə, müqavilə qeyri-müəyyən müddətə uzadılır. Bu maddə isə yalnız razılaşma ilə uzadılmanı nəzərdə tutur ki, bu da sizin avtomatik uzanma hüququnuzu məhdudlaşdırır.",
+   "suggestion": "Müqavilənin müddəti 12 (on iki) aydır. Əgər kirayə müddəti bitdikdən sonra kirayəçi mənzildən istifadəni davam etdirirsə və iki həftə ərzində kirayəyə verən və ya kirayəçi əks niyyətdə olduğu barədə bildiriş vermirsə, müqavilə Mülki Məcəllənin 693.2.1-ci maddəsinə uyğun olaraq qeyri-müəyyən müddətə uzadılmış hesab edilir.",
+   "law_refs": [
+    "693"
+   ]
+  },
+  {
+   "clause_index": 3,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Bu müddəa aylıq kirayə haqqını, ödəniş müddətini və üsulunu müəyyən edir. Qəbz verilməsi şərtinin olması müsbətdir. Mülki Məcəllənin 684.1-ci maddəsi kirayə haqqının ayın sonunda ödənilməsini nəzərdə tutsa da, tərəflərin razılaşması ilə ayın əvvəli də təyin oluna bilər.",
+   "suggestion": "",
+   "law_refs": [
+    "684"
+   ]
+  },
+  {
+   "clause_index": 4,
+   "risk": "low",
+   "category": "price_change",
+   "explanation": "Bu maddə müqavilə müddəti ərzində kirayə haqqının dəyişməyəcəyini qeyd edir ki, bu da sizin üçün çox sərfəlidir. Uzadılma zamanı isə yeni məbləğ razılaşma ilə müəyyən ediləcək.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "medium",
+   "category": "deposit",
+   "explanation": "Depozitin məbləği Mülki Məcəllənin 688.2-ci maddəsində nəzərdə tutulan iki aylıq kirayə haqqının maksimal həddindən azdır və \"normal köhnəlmə istisna olmaqla\" şərti də sizin xeyrinizədir. Lakin 688.2-ci maddəyə görə, depozit bankda ayrıca, faizlə saxlanılmalı və faizlər sizə aid olmalıdır. Bu bənddə faizlər barədə aydınlıq yoxdur.",
+   "suggestion": "Kirayəçi bir aylıq kirayə haqqı məbləğində (550 manat) depozit ödəyir. Depozit Mülki Məcəllənin 688.2-ci maddəsinə uyğun olaraq bank hesabında, ev sahibinin öz kapitalından ayrılıqda və faizlə saxlanılır. Faizlər kirayəçiyə mənsubdur və öhdəliyin təminatının artmasına xidmət edir. Depozit müqavilə bitdikdən sonra 7 gün ərzində, sənədləşdirilmiş zərərlər (normal köhnəlmə istisna olmaqla) çıxılmaqla qaytarılır.",
+   "law_refs": [
+    "688",
+    "682"
+   ]
+  },
+  {
+   "clause_index": 6,
+   "risk": "low",
+   "category": "payment",
+   "explanation": "Bu maddə ödəniş gecikdikdə ev sahibinin dərhal müqaviləni ləğv etmək əvəzinə, əvvəlcə sizə yazılı xəbərdarlıq göndərəcəyini bildirir. Bu, Mülki Məcəllənin 685-ci maddəsindəki ləğvetmə əsaslarından öncə bir fürsət olaraq sizin üçün müsbət bir addımdır.",
+   "suggestion": "",
+   "law_refs": [
+    "685"
+   ]
+  },
+  {
+   "clause_index": 7,
+   "risk": "low",
+   "category": "repairs",
+   "explanation": "Bu maddə təmir xərclərinin bölünməsini aydın şəkildə izah edir. Mülki Məcəllənin 676.0.1-ci maddəsinə görə ev sahibi mənzilin yararlı vəziyyətdə olmasından məsuliyyət daşıyır, 682-ci maddəyə görə isə siz normal köhnəlməyə görə məsuliyyət daşımırsınız. Bu müddəa qanunvericiliyə uyğundur və balanslıdır.",
+   "suggestion": "",
+   "law_refs": [
+    "676",
+    "682"
+   ]
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Bu maddə sizin mənzildə məxfiliyiniz hüququnu qoruyur. Ev sahibi mənzilə daxil olmaq üçün ən azı 24 saat əvvəl sizə xəbərdarlıq etməli və sizin razılığınızı almalıdır ki, bu da standart və ədalətli bir şərtdir. Qəza halları (su sızması, yanğın) istisnası da məntiqlidir və Mülki Məcəllənin 678-ci maddəsinin ruhuna uyğundur.",
+   "suggestion": "",
+   "law_refs": [
+    "678"
+   ]
+  },
+  {
+   "clause_index": 9,
+   "risk": "medium",
+   "category": "usage_rules",
+   "explanation": "Bu maddə ev sahibinin yazılı razılığı olmadan mənzili subkirayəyə verməyinizi qadağan edir. Mülki Məcəllənin 683.1-ci maddəsi ümumilikdə icazə tələbini qoyur. Lakin 683.2-ci maddəyə əsasən, əgər sizin mənzilin bir hissəsini subkirayəyə vermək üçün əsaslı marağınız varsa, ev sahibinin bu razılığı əsassız olaraq rədd etmək hüququ yoxdur (müəyyən şərtlərlə). Bu müddəa sizin bu qanuni hüququnuzu qeyd etmir.",
+   "suggestion": "Kirayəçi mənzili Ev sahibinin yazılı razılığı olmadan subkirayəyə verə bilməz. Lakin Kirayəçinin Mülki Məcəllənin 683.2-ci maddəsinə uyğun olaraq mənzilin bir hissəsini üçüncü şəxsə istifadəyə vermək üçün əsaslı marağı olduqda Ev sahibindən icazə almaq hüququ vardır, bu şərtlə ki, üçüncü şəxs icazədən imtina üçün mühüm əsaslar verməsin və yaşayış otağı həddindən artıq yüklənməsin.",
+   "law_refs": [
+    "683"
+   ]
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "termination",
+   "explanation": "Bu maddə müqavilənin ləğvi üçün hər iki tərəf üçün 3 aylıq yazılı bildiriş müddəti təyin edir. Mülki Məcəllənin 691.2-ci maddəsinə görə yaşayış otaqları üçün müqavilənin ləğvinə dair bildiriş təqvim ayının birinci iş günü verilməklə növbəti aydan sonrakı ayın axırı üçün qüvvəyə minir ki, bu da təxminən 3 aya bərabərdir. Buna görə də bu müddəa qanunvericiliklə uyğundur.",
+   "suggestion": "",
+   "law_refs": [
+    "691"
+   ]
+  },
+  {
+   "clause_index": 11,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Bu maddə ev heyvanı saxlamaq üçün ev sahibindən yazılı razılıq tələb etsə də, razılığın əsassız olaraq rədd edilə bilməyəcəyini qeyd edir. Bu, sizin üçün müsbət bir şərtdir, çünki ev sahibinin qərarının əsaslı olmasını təmin edir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Bu maddə mənzildə siqaret çəkməyi qadağan edir. Bu, mülkün qorunması və gələcək kirayəçilərin sağlamlığı üçün adətən tətbiq olunan standart bir qaydadır.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu maddə mübahisələrin əvvəlcə danışıqlar yolu ilə, sonra isə məhkəmə qaydasında həll ediləcəyini bildirir. Bu, hüquqi müqavilələr üçün standart bir müddəadır. Mülki Məcəllənin 696.3-cü maddəsi də mübahisələrin məhkəmədə həll olunmasını nəzərdə tutur.",
+   "suggestion": "",
+   "law_refs": [
+    "696"
+   ]
+  }
+ ],
+ "run": 1
+}

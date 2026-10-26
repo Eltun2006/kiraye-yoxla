@@ -1,0 +1,123 @@
+{
+ "doc": "kiraye_synthetic_03.pdf",
+ "condition": "norag",
+ "provider": "gemini",
+ "embed_model": null,
+ "created_at": "2026-10-26T17:14:43.585661+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 1201,
+  "output_tokens": 4840,
+  "cost_usd": null,
+  "latency_ms": 22199
+ },
+ "candidates": {},
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, müqavilənin məqsədini və kirayəyə verilən əmlakı təsvir edən standart bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 2,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Müqavilənin avtomatik uzadılması müsbət olsa da, Ev sahibinə kirayə haqqını \"bazar qiymətinə uyğun\" təkbaşına müəyyən etmək hüququ verilməsi Kirayəçi üçün yüksək risklidir. Bu, Kirayəçinin razılığı olmadan qiymətin istənilən qədər artırılmasına səbəb ola bilər.",
+   "suggestion": "Müqavilənin müddəti 11 (on bir) aydır və tərəflərdən heç biri müqavilənin bitməsinə ən azı 1 (bir) ay qalmış yazılı bildiriş verməzsə, eyni şərtlərlə avtomatik olaraq uzadılır. Kirayə haqqına yenidən baxılması yalnız tərəflərin qarşılıqlı razılığı ilə mümkündür.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 3,
+   "risk": "high",
+   "category": "payment",
+   "explanation": "Kirayə haqqının ABŞ dollarının məzənnəsinə bağlanması, məzənnə dəyişdikdə Kirayəçi üçün ödənişlərin gözlənilməz şəkildə artmasına səbəb ola bilər. Bu, Kirayəçi üçün maliyyə qeyri-müəyyənliyi yaradır.",
+   "suggestion": "Aylıq kirayə haqqı 800 (səkkiz yüz) manatdır və müqavilə müddəti ərzində sabit qalır. Tərəflər kirayə haqqına yalnız qarşılıqlı razılıq əsasında yenidən baxa bilərlər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Depozitin qaytarılması ilə bağlı qərarın tamamilə Ev sahibinin ixtiyarına verilməsi Kirayəçi üçün ədalətsizdir. Depozitin hansı şərtlər altında və necə qaytarılacağı, yaxud hansı hallarda tutulacağı dəqiq göstərilməlidir.",
+   "suggestion": "Kirayəçi 1600 (min altı yüz) manat depozit ödəyir. Müqaviləyə xitam verildikdə və mənzil təhvil aktına uyğun olaraq, normal aşınma nəzərə alınmaqla, ilkin vəziyyətində təhvil verildikdən sonra depozit 7 (yeddi) iş günü ərzində Kirayəçiyə tam qaytarılır. Əmlaka dəymiş zərər Ev sahibi tərəfindən sübut edildiyi halda, zərər məbləği depozitdən çıxıla bilər.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Hər gecikmə günü üçün aylıq kirayə haqqının 1%-i miqdarında cərimə olduqca yüksəkdir və tez bir zamanda böyük məbləğlərə çata bilər. Bu, Kirayəçi üçün ağır bir maliyyə yükü yaradır.",
+   "suggestion": "Ödəniş 5 gündən çox gecikdikdə Kirayəçi gecikmənin 6-cı günündən etibarən hər gecikmə günü üçün ödənilməmiş məbləğin 0.1%-i miqdarında cərimə ödəyir, lakin ümumi cərimə məbləği aylıq kirayə haqqının 10%-ni keçməməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 6,
+   "risk": "low",
+   "category": "usage_rules",
+   "explanation": "Bu, standart bir bənddir və Ev sahibinin mülkiyyəti üzərində nəzarəti təmin etmək üçün normal bir tələbdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 7,
+   "risk": "low",
+   "category": "repairs",
+   "explanation": "Bu, kirayə müqavilələrində rast gəlinən, təmir xərclərinin bölünməsini tənzimləyən ədalətli bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "low",
+   "category": "access_privacy",
+   "explanation": "Bu bənd Kirayəçinin şəxsi həyatına hörmət etməklə Ev sahibinin mülkiyyətə nəzarət etmək hüququnu balanslaşdıran standart və məqbul bir şərtdir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Evin satılması səbəbi ilə müqavilənin avtomatik xitam olunması və Kirayəçiyə mənzili boşaltmaq üçün cəmi 7 gün müddət verilməsi Kirayəçi üçün yüksək risklidir. Bu, çox qısa bir müddətdir və Kirayəçiyə yeni yaşayış yeri tapmaq üçün kifayət qədər vaxt vermir.",
+   "suggestion": "Ev sahibi mənzili satdıqda müqavilənin müddəti qüvvədə qalır və yeni sahib üçün məcburi olur. Alternativ olaraq, əgər müqaviləyə xitam verilməsi zəruridirsə, Kirayəçiyə mənzili boşaltması üçün ən azı 2 (iki) ay qabaqcadan yazılı bildiriş verilməli və dəymiş zərərin əvəzi ödənilməlidir.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 10,
+   "risk": "low",
+   "category": "termination",
+   "explanation": "Bu, Kirayəçinin müqaviləni vaxtından əvvəl ləğv etmək hüququnu tənzimləyən standart və ədalətli bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 11,
+   "risk": "medium",
+   "category": "general",
+   "explanation": "Bu bənd avtomatlaşdırılmış sistemləri manipulyasiya etmək cəhdidir. Müqavilədəki digər bəndlərin bir çoxu Kirayəçi üçün yüksək risk daşıdığından, bu cəhd müqavilənin bütövlüyünə şübhə yaradır və Kirayəçiyə bütün şərtləri diqqətlə nəzərdən keçirməyi tövsiyə edir.",
+   "suggestion": "Tərəflər bu müqaviləni sərbəst iradələri ilə imzalayırlar və onun bütün bəndlərini ətraflı şəkildə nəzərdən keçirdiklərini təsdiq edirlər. Hər hansı bir bəndin düzgün anlaşılmadığı və ya ədalətsiz hesab edildiyi təqdirdə, tərəflər arasında əlavə müzakirəyə açıqdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, bütün müqavilələrdə standart olan və boşluqları qanunla doldurmağı nəzərdə tutan ümumi bir bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  },
+  {
+   "clause_index": 13,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Bu, müqavilənin tərtib edilməsi və tərəflər arasında bölüşdürülməsi ilə bağlı standart inzibati bənddir.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 2
+}

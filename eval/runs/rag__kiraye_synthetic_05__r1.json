@@ -1,0 +1,222 @@
+{
+ "doc": "kiraye_synthetic_05.txt",
+ "condition": "rag",
+ "provider": "gemini",
+ "embed_model": "gemini-embedding-001",
+ "created_at": "2026-10-26T17:12:44.926183+00:00",
+ "metrics": {
+  "invalid_refs": 0,
+  "model": "gemini-2.5-flash",
+  "input_tokens": 16087,
+  "output_tokens": 7599,
+  "cost_usd": null,
+  "latency_ms": 35257
+ },
+ "candidates": {
+  "1": [
+   "675",
+   "693",
+   "692",
+   "681",
+   "687"
+  ],
+  "2": [
+   "693",
+   "689",
+   "691",
+   "692",
+   "696"
+  ],
+  "3": [
+   "688",
+   "684",
+   "685",
+   "675",
+   "680"
+  ],
+  "4": [
+   "688",
+   "680",
+   "675",
+   "684",
+   "685"
+  ],
+  "5": [
+   "680",
+   "678",
+   "679",
+   "688",
+   "675"
+  ],
+  "6": [
+   "698",
+   "681",
+   "685",
+   "688",
+   "697"
+  ],
+  "7": [
+   "693",
+   "695",
+   "692",
+   "681",
+   "683"
+  ],
+  "8": [
+   "679",
+   "688",
+   "680",
+   "675",
+   "695"
+  ],
+  "9": [
+   "694",
+   "692",
+   "687",
+   "691",
+   "685"
+  ],
+  "10": [
+   "678",
+   "681",
+   "696",
+   "683",
+   "677"
+  ],
+  "11": [
+   "682",
+   "678",
+   "680",
+   "677",
+   "676"
+  ],
+  "12": [
+   "675",
+   "679",
+   "690",
+   "677",
+   "683"
+  ]
+ },
+ "assessments": [
+  {
+   "clause_index": 1,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Mənzilin kirayəyə verilməsinin əsas məqsədini (yaşayış) və yerini göstərən standart müddəadır. Kirayəçi üçün risk daşımır.",
+   "suggestion": "",
+   "law_refs": [
+    "675"
+   ]
+  },
+  {
+   "clause_index": 2,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Müqavilənin avtomatik uzadılması və kirayə haqqının birtərəfli qaydada 15% artırılması Kirayəçi üçün əlverişsizdir. Mülki Məcəllənin 692.8-ci maddəsinə görə Kirayəçinin ziyanına olan belə kənaraçıxmaların qüvvəsi yoxdur.",
+   "suggestion": "Müqavilənin müddəti 12 (on iki) aydır. Müqavilənin müddəti bitməzdən 2 (iki) ay əvvəl tərəflərdən heç biri yazılı bildirişlə xitam vermək istəyini bildirməzsə, müqavilə qeyri-müəyyən müddətə uzadılmış hesab edilir. Kirayə haqqının artırılması yalnız tərəflərin qarşılıqlı razılığı ilə mümkündür və bu barədə yeni razılaşma bağlanmalıdır.",
+   "law_refs": [
+    "693",
+    "692"
+   ]
+  },
+  {
+   "clause_index": 3,
+   "risk": "high",
+   "category": "payment",
+   "explanation": "Qəbz verilməməsi Kirayəçinin ödənişi sübut etmək imkanını əlindən alır ki, bu da gələcəkdə mübahisələrə səbəb ola bilər. Ödənişlərin sənədləşdirilməsi hər hansı müqavilədə vacibdir.",
+   "suggestion": "Aylıq kirayə haqqı 500 (beş yüz) manatdır və Ev sahibinin bank hesabına köçürülməklə və ya nağd şəkildə ödənilir. Nağd ödəniş edildikdə, Ev sahibi dərhal qəbz verməlidir.",
+   "law_refs": [
+    "684"
+   ]
+  },
+  {
+   "clause_index": 4,
+   "risk": "high",
+   "category": "deposit",
+   "explanation": "Mülki Məcəllənin 688.2-ci maddəsinə əsasən, təminat (depozit) bir aylıq əmlak kirayəsi haqqının iki mislindən, yəni iki aylıq kirayə haqqından çox olmamalıdır. Həmçinin, 688.3-cü maddə Kirayəçinin ziyanına olan belə kənaraçıxmaların qüvvəsinin olmadığını bildirir.",
+   "suggestion": "Kirayəçi 2 (iki) aylık kirayə haqqı məbləğində, yəni 1000 manat təminat ödəyir. Bu təminat Ev sahibi tərəfindən bankda öz kapitalından ayrılıqda, qanunla müəyyənləşdirilmiş faizlər ilə yerləşdirilməlidir. Faizlər Kirayəçiyə mənsubdur və təminatın artmasına xidmət edir.",
+   "law_refs": [
+    "688"
+   ]
+  },
+  {
+   "clause_index": 5,
+   "risk": "high",
+   "category": "price_change",
+   "explanation": "Ev sahibinin binanın ümumi xərcləri üçün ödənilən məbləği birtərəfli qaydada dəyişdirmək hüququ Kirayəçi üçün risklidir. Mülki Məcəllənin 679-cu maddəsinə görə, ayrı razılaşma olmadıqda, yüklülükləri kirayəyə verən ödəməlidir. Dəyişikliklər tərəflərin razılığı ilə olmalıdır.",
+   "suggestion": "Kommunal xidmətlərə əlavə olaraq Kirayəçi binanın ümumi xərcləri üçün hər ay sabit 80 manat ödəyir. Bu məbləğin dəyişdirilməsi yalnız tərəflərin qarşılıqlı razılığı ilə və yazılı şəkildə həyata keçirilə bilər.",
+   "law_refs": [
+    "679"
+   ]
+  },
+  {
+   "clause_index": 6,
+   "risk": "high",
+   "category": "penalty",
+   "explanation": "Mülki Məcəllənin 698.1-ci maddəsi kirayəyə verənə girov hüququ versə də, bu hüquq girov qoyula bilməyən əşyalara şamil edilmir. Müddəa Kirayəçinin şəxsi əşyalarının saxlanması ilə bağlı qanuni məhdudiyyətləri dəqiq ifadə etməlidir.",
+   "suggestion": "Kirayəçi kirayə haqqını vaxtında ödəmədikdə, Mülki Məcəllənin 698-ci maddəsinə uyğun olaraq Ev sahibinin Kirayəçinin mənzildəki girov qoyula bilən əşyaları üzərində girov hüququ yaranır. Lakin bu girov hüququ Kirayəçinin gündəlik tələbatına lazım olan əşyalara və qanunla girov qoyulması qadağan olunan əşyalara şamil edilmir. Kirayəçi borcu ödəyərsə, Ev sahibi əşyaları dərhal qaytarmalıdır.",
+   "law_refs": [
+    "698"
+   ]
+  },
+  {
+   "clause_index": 7,
+   "risk": "medium",
+   "category": "usage_rules",
+   "explanation": "Bu müddəa Kirayəçinin yaşadığı ünvanda qeydiyyata düşmək hüququnu məhdudlaşdırır. Azərbaycan qanunvericiliyinə görə, vətəndaşın yaşadığı ünvanda qeydiyyatda olması hüququ var.",
+   "suggestion": "Kirayəçinin mənzildə qanunvericiliyə uyğun olaraq müvəqqəti qeydiyyata (propiska) düşmək hüququ vardır. Ev sahibi bu hüququn həyata keçirilməsinə mane olmamalıdır.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 8,
+   "risk": "medium",
+   "category": "general",
+   "explanation": "Notarial xərclərin tamamilə Kirayəçinin üzərinə qoyulması Kirayəçinin ziyanınadır. Adətən belə xərclər tərəflər arasında bərabər şəkildə bölünür.",
+   "suggestion": "Müqavilənin notarial təsdiqi ilə bağlı xərclər Ev sahibi və Kirayəçi arasında bərabər şəkildə bölünür.",
+   "law_refs": []
+  },
+  {
+   "clause_index": 9,
+   "risk": "high",
+   "category": "termination",
+   "explanation": "Ev sahibinin müqaviləni 1 (bir) ay əvvəl ləğv etmək hüququ Mülki Məcəllənin 691.2-ci maddəsinə ziddir. Həmin maddəyə görə yaşayış otaqları üzrə ləğvetmə bildirişi növbəti aydan sonrakı ayın axırı üçün qüvvəyə minməklə təqvim ayının birinci iş günü verilir ki, bu da ən azı 2 ay + cari ayın sonu deməkdir. Mülki Məcəllənin 692.8-ci maddəsinə əsasən, Kirayəçinin ziyanına olan kənaraçıxmaların qüvvəsi yoxdur.",
+   "suggestion": "Ev sahibinin özü və ya ailə üzvləri üçün mənzildən istifadə etmək zərurəti yarandıqda, Ev sahibi müqaviləni Mülki Məcəllənin 691.2-ci maddəsində nəzərdə tutulmuş müddətlərə riayət etməklə ləğv edə bilər. Kirayəçi, Mülki Məcəllənin 696-cı maddəsinə əsasən, bu ləğvetmədən şikayət etmək hüququna malikdir.",
+   "law_refs": [
+    "692",
+    "691",
+    "696"
+   ]
+  },
+  {
+   "clause_index": 10,
+   "risk": "medium",
+   "category": "repairs",
+   "explanation": "Bu, Ev sahibinin mülkiyyətinə nəzarət etmək hüququ baxımından standart bir tələb olsa da, təcili və zəruri təmir işlərinin Ev sahibinin razılığı olmadan görülməsi imkanı müqavilədə öz əksini tapmalıdır. Mülki Məcəllənin 677.1.3-cü maddəsi Kirayəçinin qüsuru Ev sahibinin gecikməsi halında özü aradan qaldırmaq və xərclərini tələb etmək hüququnu verir.",
+   "suggestion": "Kirayəçi mənzildə hər hansı təmir və ya dəyişiklik etmək üçün Ev sahibinin yazılı razılığını almalıdır, zəruri və təcili təmir işləri istisna olmaqla. Təcili təmir işlərinin Ev sahibinin gecikməsi səbəbindən Kirayəçi tərəfindən həyata keçirilməsi Mülki Məcəllənin 677.1.3-cü maddəsində nəzərdə tutulmuş qaydada mümkündür.",
+   "law_refs": [
+    "677"
+   ]
+  },
+  {
+   "clause_index": 11,
+   "risk": "high",
+   "category": "repairs",
+   "explanation": "Mülki Məcəllənin 682-ci maddəsinə əsasən, Kirayəçi əşyanın müqavilə üzrə istifadəsi nəticəsində dəyişməsi və ya pisləşməsi (yəni normal köhnəlmə) üçün məsuliyyət daşımır. Normal köhnəlmədən yaranan təmir xərcləri Ev sahibinə aid olmalıdır.",
+   "suggestion": "Mebel və məişət texnikasının normal köhnəlməsi nəticəsində yaranan nasazlıqlar Ev sahibinin hesabına təmir edilir. Kirayəçi yalnız əşyalara vurulan qəsdən zərərə görə və ya əşyalardan düzgün istifadə edilməməsi nəticəsində yaranan nasazlıqlar üçün məsuliyyət daşıyır.",
+   "law_refs": [
+    "682",
+    "676"
+   ]
+  },
+  {
+   "clause_index": 12,
+   "risk": "low",
+   "category": "general",
+   "explanation": "Müqavilənin tərtibi və nüsxələrin verilməsi ilə bağlı standart bir müddəadır. Kirayəçi üçün risk daşımır.",
+   "suggestion": "",
+   "law_refs": []
+  }
+ ],
+ "run": 1
+}
