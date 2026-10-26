@@ -131,3 +131,9 @@ def test_security_headers(client):
     assert "script-src 'self'" in h["content-security-policy"]
     assert h["x-content-type-options"] == "nosniff" and h["referrer-policy"] == "no-referrer"
     assert "content-security-policy" not in client.get("/docs").headers  # Swagger UI needs its CDN
+
+
+@pytest.mark.parametrize("url", ["postgresql://u:p@h/db?sslmode=require", "postgres://u:p@h/db"])
+def test_hosted_postgres_urls_use_psycopg2(url):
+    from backend.config import Settings
+    assert Settings(database_url=url).database_url.startswith("postgresql+psycopg2://u:p@h/db")

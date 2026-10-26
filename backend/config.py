@@ -1,3 +1,4 @@
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -30,6 +31,17 @@ class Settings(BaseSettings):
 
     # Deployment: fill an empty law table from data/law on startup (Docker sets this; tests must not)
     auto_ingest_law: bool = False
+
+
+    @field_validator("database_url")
+    @classmethod
+    def _use_psycopg2(cls, url: str) -> str:
+        # Hosted providers (Neon, Render) hand out "postgresql://" / "postgres://" URLs. SQLAlchemy 2.1 maps
+        # those to psycopg 3, but the installed driver is psycopg2 — name it explicitly.
+        for prefix in ("postgresql://", "postgres://"):
+            if url.startswith(prefix):
+                return "postgresql+psycopg2://" + url[len(prefix):]
+        return url
 
 
 settings = Settings()
