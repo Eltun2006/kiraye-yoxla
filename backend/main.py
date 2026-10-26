@@ -165,7 +165,7 @@ def _run_pipeline(analysis_id: int, filename: str, data: bytes) -> None:
                 raise ParseError(f"Müqavilədə {len(clauses)} bənd var; maksimum {settings.max_clauses} dəstəklənir.")
             parse_ms = int((time.perf_counter() - t0) * 1000)
             a.preamble = preamble
-            a.clauses = [ClauseRow(idx=c.idx, text=c.text) for c in clauses]
+            a.clauses = [ClauseRow(idx=c.idx, label=c.label or None, text=c.text) for c in clauses]
             a.status = "analyzing"
             db.commit()
 

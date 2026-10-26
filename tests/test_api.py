@@ -57,6 +57,7 @@ def test_full_flow(client):
     a = client.get(f"/analyses/{r.json()['id']}").json()
     assert a["status"] == "done" and len(a["clauses"]) == 13
     assert a["trace"]["parse_ms"] >= 0 and a["trace"]["retrieval_mode"] is None  # no law table in this test
+    assert [c["label"] for c in a["clauses"]][:3] == ["1", "2", "3"]
 
     deposit = next(c for c in a["clauses"] if c["idx"] == 5)
     assert client.patch(f"/analyses/{a['id']}/clauses/{deposit['id']}", json={"decision": "accepted"}).status_code == 200

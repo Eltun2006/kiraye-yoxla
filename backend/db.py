@@ -70,6 +70,7 @@ class ClauseRow(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     analysis_id: Mapped[int] = mapped_column(ForeignKey("analyses.id", ondelete="CASCADE"))
     idx: Mapped[int] = mapped_column(Integer)
+    label: Mapped[str | None] = mapped_column(String(16))  # number as printed in the contract: "2.1"
     text: Mapped[str] = mapped_column(Text)
     risk: Mapped[str | None] = mapped_column(String(10))
     category: Mapped[str | None] = mapped_column(String(30))

@@ -41,6 +41,7 @@ class ClauseOut(BaseModel):
 
     id: int
     idx: int
+    label: str | None = None
     text: str
     risk: str | None
     category: str | None

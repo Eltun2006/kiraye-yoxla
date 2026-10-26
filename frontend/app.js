@@ -371,7 +371,7 @@ function renderResult(a) {
       const proposal = c.decision === "edited" ? c.user_text : c.decision === "accepted" ? c.suggestion : null;
       return `
       <article class="clause ${c.risk} ${c.id === state.selected ? "selected" : ""} ${dim ? "dim" : ""}" data-id="${c.id}" tabindex="0">
-        <span class="num">${c.idx}.</span>
+        <span class="num">${esc(c.label || c.idx)}.</span>
         <p><span class="hl">${esc(c.text)}</span>${(c.law_refs || []).map((r) => ` <span class="lawtag" title="Mülki Məcəllə, maddə ${esc(r)}">§ ${esc(r)}</span>`).join("")}</p>
         ${c.risk === "low" ? "" : `<span class="state ${c.decision}">${DECISION[c.decision] || `<span class="pill ${c.risk}">${RISK[c.risk].short}</span>`}</span>`}
         ${proposal ? `<div class="rewrite">${esc(proposal)}</div>` : ""}
@@ -424,7 +424,7 @@ function renderResult(a) {
         <span class="pill ${c.risk}">● ${RISK[c.risk]?.label ?? "—"}</span>
         <span class="pill neutral">${esc(CATEGORY[c.category] || c.category || "")}</span>
       </div>
-      <h3>Bənd ${c.idx}</h3>
+      <h3>Bənd ${esc(c.label || c.idx)}</h3>
       <div class="section">
         <div class="label">Niyə ${c.risk === "low" ? "normaldır" : "risklidir"}</div>
         <p>${esc(c.explanation)}</p>

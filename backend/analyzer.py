@@ -63,13 +63,18 @@ def _as_data(text: str) -> str:
     return text.replace("<", "‹").replace(">", "›")
 
 
+def _number(c: Clause) -> str:
+    # Multi-level contracts: explanations should say "bənd 2.1" like the contract does, not the position.
+    return f' number="{c.label}"' if c.label and c.label != str(c.idx) else ""
+
+
 def _format_input(clauses: list[Clause], ctx: "LawContext | None" = None) -> str:
     if ctx is None:
-        body = "\n".join(f'<clause index="{c.idx}">{_as_data(c.text)}</clause>' for c in clauses)
+        body = "\n".join(f'<clause index="{c.idx}"{_number(c)}>{_as_data(c.text)}</clause>' for c in clauses)
         return f"<law>(no articles available)</law>\n<contract>\n{body}\n</contract>"
     law = "\n".join(f'<article id="{a.id}" title="{a.title}">\n{a.text}\n</article>' for a in ctx.articles.values())
     body = "\n".join(
-        f'<clause index="{c.idx}" candidate_articles="{", ".join(ctx.candidates.get(c.idx, []))}">{_as_data(c.text)}</clause>'
+        f'<clause index="{c.idx}"{_number(c)} candidate_articles="{", ".join(ctx.candidates.get(c.idx, []))}">{_as_data(c.text)}</clause>'
         for c in clauses
     )
     return f'<law source="Mülki Məcəllə, 33-cü fəsil (e-qanun.az)">\n{law}\n</law>\n<contract>\n{body}\n</contract>'

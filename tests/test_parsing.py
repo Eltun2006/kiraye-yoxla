@@ -131,3 +131,71 @@ def test_shipped_samples(name, expected):
     _, clauses = split_clauses(extract_text(name, (SAMPLES / name).read_bytes()))
     assert len(clauses) == expected
     assert not any("Səhifə" in c.text or "____" in c.text for c in clauses)
+
+
+# ---------- Multi-level numbering (1. heading → 1.1. points), common in real contracts ----------
+MULTILEVEL = """YAŞAYIŞ SAHƏSİNİN KİRAYƏSİ MÜQAVİLƏSİ
+Bakı şəhəri                                   01.09.2026
+
+1. MÜQAVİLƏNİN PREDMETİ
+1.1. Ev sahibi mənzili Kirayəçiyə yaşayış məqsədilə istifadəyə verir.
+1.2 Mənzilin ünvanı: Bakı şəhəri, Nəsimi rayonu.
+2. ÖDƏNİŞ ŞƏRTLƏRİ
+2.1. Aylıq kirayə haqqı 500 manatdır.
+2.2. Kirayəçi aşağıdakıları ödəyir:
+2.2.1. elektrik enerjisi;
+2.2.2. internet.
+2.3. Depozit heç bir halda qaytarılmır.
+3. Müqavilə iki nüsxədə tərtib edilir.
+Tərəflərin imzaları: ________  ________
+"""
+
+
+def test_multilevel_points_are_clauses_and_headings_are_dropped():
+    pre, clauses = split_clauses(MULTILEVEL)
+    assert [c.label for c in clauses] == ["1.1", "1.2", "2.1", "2.2", "2.3", "3"]
+    assert [c.idx for c in clauses] == [1, 2, 3, 4, 5, 6]  # positions stay 1..n for the LLM and the database
+    by = {c.label: c.text for c in clauses}
+    assert by["1.2"] == "Mənzilin ünvanı: Bakı şəhəri, Nəsimi rayonu."  # heading "2. ÖDƏNİŞ" not glued on
+    assert by["2.2"] == "Kirayəçi aşağıdakıları ödəyir: 2.2.1. elektrik enerjisi; 2.2.2. internet."
+    assert by["3"] == "Müqavilə iki nüsxədə tərtib edilir."  # numbered clause without sub-points; no signatures
+    assert pre.startswith("YAŞAYIŞ SAHƏSİNİN")
+
+
+def test_flat_contracts_keep_their_numbers_as_labels():
+    _, clauses = split_clauses("\n".join(f"{i}. {c}" for i, c in enumerate(CLAUSES, start=1)))
+    assert [c.label for c in clauses] == ["1", "2", "3", "4"]
+
+
+def _multilevel_numbering(doc) -> int:
+    """Add a Word multi-level list ("1." / "1.1.") to the document's numbering part; returns its numId."""
+    from docx.oxml import parse_xml
+    from docx.oxml.ns import nsdecls
+
+    numbering = doc.part.numbering_part.element
+    lvls = "".join(
+        f'<w:lvl w:ilvl="{i}"><w:start w:val="1"/><w:numFmt w:val="decimal"/><w:lvlText w:val="{t}"/></w:lvl>'
+        for i, t in enumerate(["%1.", "%1.%2."])
+    )
+    numbering.append(parse_xml(f'<w:abstractNum {nsdecls("w")} w:abstractNumId="90">{lvls}</w:abstractNum>'))
+    numbering.append(parse_xml(f'<w:num {nsdecls("w")} w:numId="90"><w:abstractNumId w:val="90"/></w:num>'))
+    return 90
+
+
+def test_docx_multilevel_list_becomes_points():
+    from docx.oxml import parse_xml
+    from docx.oxml.ns import nsdecls
+
+    def build(doc):
+        doc.add_paragraph("x", style="List Number")  # makes sure the numbering part exists
+        doc.paragraphs[0]._p.getparent().remove(doc.paragraphs[0]._p)
+        num_id = _multilevel_numbering(doc)
+        for level, text in [(0, "PREDMET"), (1, CLAUSES[0]), (1, CLAUSES[1]), (0, "ÖHDƏLİKLƏR"),
+                            (1, CLAUSES[2]), (1, CLAUSES[3])]:
+            p = doc.add_paragraph(text)
+            p._p.get_or_add_pPr().append(parse_xml(
+                f'<w:numPr {nsdecls("w")}><w:ilvl w:val="{level}"/><w:numId w:val="{num_id}"/></w:numPr>'))
+
+    _, clauses = split_clauses(extract_text("x.docx", _docx_bytes(build)))
+    assert [(c.label, c.text) for c in clauses] == [
+        ("1.1", CLAUSES[0]), ("1.2", CLAUSES[1]), ("2.1", CLAUSES[2]), ("2.2", CLAUSES[3])]

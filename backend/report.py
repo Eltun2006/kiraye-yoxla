@@ -31,7 +31,7 @@ def build_report(a: Analysis, laws: list | None = None) -> str:
     for c in risky:
         lines += [
             "",
-            f"### Bənd {c.idx} — {RISK_LABEL[c.risk]}",
+            f"### Bənd {c.label or c.idx} — {RISK_LABEL[c.risk]}",
             f"> {c.text}",
             "",
             f"**Niyə risklidir:** {c.explanation}",
@@ -52,7 +52,7 @@ def build_report(a: Analysis, laws: list | None = None) -> str:
 
 def build_message(a: Analysis) -> str:
     """Negotiation message built only from clauses the tenant accepted or edited (human-in-the-loop)."""
-    proposals = [(c.idx, _final_text(c)) for c in a.clauses if _final_text(c)]
+    proposals = [(c.label or c.idx, _final_text(c)) for c in a.clauses if _final_text(c)]
     if not proposals:
         return "Heç bir təklif qəbul edilməyib. Mesaj yaratmaq üçün riskli bəndlərdə təklifləri qəbul edin və ya redaktə edin."
     lines = ["Salam! Müqaviləni imzalamazdan əvvəl aşağıdakı bəndlərdə dəyişiklik təklif edirəm:", ""]
