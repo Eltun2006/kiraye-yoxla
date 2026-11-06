@@ -76,6 +76,11 @@ def test_frontend_and_samples(client):
     assert client.get("/samples/..%2F.env").status_code == 404
 
 
+def test_health_for_keepalive(client):
+    assert client.get("/health").json() == {"status": "ok"}
+    assert client.head("/health").status_code == 200
+
+
 def test_message_only_from_accepted(client):
     r = client.post("/analyses", files={"file": (SAMPLE.name, SAMPLE.read_bytes())})
     aid = r.json()["id"]

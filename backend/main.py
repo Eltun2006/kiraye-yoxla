@@ -90,6 +90,13 @@ def index():
     return FileResponse(FRONTEND / "index.html")
 
 
+@app.api_route("/health", methods=["GET", "HEAD"], include_in_schema=False)
+def health():
+    """Keep-alive ping target: no DB, no LLM — costs nothing and never touches the Gemini quota.
+    HEAD is allowed because uptime monitors often ping with HEAD."""
+    return {"status": "ok"}
+
+
 def _sample_title(text: str) -> str:
     first = next((l.strip() for l in text.splitlines() if l.strip() and not l.startswith("[")), "Nümunə")
     return first.replace("İ", "i").replace("I", "ı").lower().capitalize()
